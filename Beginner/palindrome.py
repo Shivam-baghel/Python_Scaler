@@ -1,10 +1,13 @@
 
 def checkPalindrome(strg):
-    a = list(strg)
-    a.reverse()
+    # a = list(strg)
+    # a.reverse()
 
-    b=list(strg)
-    if a==b:
+    # b=list(strg)
+    a=str(strg)
+    # String=strg.lower()
+    a=a.lower()
+    if a[::] == a[::-1]:
         flag = True
     else:
         flag = False
@@ -20,6 +23,7 @@ def removeSpecialChar(strg):
             pass
 
     return a
+
 
 aString = input()
 bString = removeSpecialChar(aString)
