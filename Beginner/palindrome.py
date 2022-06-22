@@ -2,17 +2,19 @@
 def checkPalindrome(strg):
     # a = list(strg)
     # a.reverse()
-
     # b=list(strg)
-    a=str(strg)
     # String=strg.lower()
+
+    a=str(strg)
     a=a.lower()
     if a[::] == a[::-1]:
-        flag = True
+        # flag = True
+        return True
     else:
-        flag = False
+        # flag = False
+        return False
         
-    return flag
+    # return flag
 
 def removeSpecialChar(strg):
     a = ""
