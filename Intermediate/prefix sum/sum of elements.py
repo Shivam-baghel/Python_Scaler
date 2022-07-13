@@ -25,7 +25,7 @@ while queries > 0 :
 
 
 """
-The time complexity of this program would be O(n^2) bcause of the 2 loops
+The time complexity of this program would be O(n^2) bcause of the 2 nested loops
 The space complexiy of this program would be O(n) because we are accepting an array.
 
 """
