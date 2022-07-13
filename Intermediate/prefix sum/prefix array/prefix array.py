@@ -8,12 +8,12 @@ How to construct prefix array.
 
 """
 
-arr = tuple(map(int,input().split()))
-prefixArray = [0] * len(arr)
-prefixArray[0] = arr[0]
+arr = tuple(map(int,input().split()))       # accepting the array
+prefixArray = [0] * len(arr)                # creating a new different array for prefix array
+prefixArray[0] = arr[0]                     # make the first element of the prefix array equal to the first element of the array.               
 
 for i in range(1,len(arr)):
-    prefixArray[i] = prefixArray[i-1] + arr[i]
+    prefixArray[i] = prefixArray[i-1] + arr[i]      # populating the prefix array.
 
 print(arr)
-print(prefixArray)
+print(prefixArray)      # printing the prefix array
