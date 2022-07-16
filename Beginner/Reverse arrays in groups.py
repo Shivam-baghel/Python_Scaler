@@ -35,7 +35,6 @@ def reverseInGroups(array, startIndex, size):
             lIndex -=1
 
 
-   
     return array
 
 inputArray = list(map(int,input("Enter the Array : ").split()))

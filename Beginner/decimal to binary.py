@@ -1,6 +1,6 @@
 def decimalToBinary(number):
     lst = []
-    while number>0:
+    while number > 0:
         remainder = number%2
         lst.append(remainder)
         number=number//2
