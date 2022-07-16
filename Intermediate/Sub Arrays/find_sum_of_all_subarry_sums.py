@@ -11,8 +11,7 @@ def sumOfSubarraySum(arr):
         sumOfElement = 0
         for j in range(i,len(arr)):
             sumOfElement += arr[j]
-        
-        ans += sumOfElement
+            ans += sumOfElement
     
     print(ans)
 
