@@ -12,14 +12,30 @@ If there is no equilibrium index then return -1.
 If there are more than one equilibrium indexes then return the minimum index.
 
 """
-def countNoOfEquilibriumIndex(prefixArray):
+def countNoOfEquilibriumIndex(arr):
+
+    prefixArray = [0]*len(arr)
+    prefixArray[0] = arr[0]
+    
+    for i in range(1,len(arr)):
+        prefixArray[i] = prefixArray[i-1] + arr[i]
+
+    count = 0
 
     for i in range(len(arr)):
-        leftSum = 0
+        
         rightSum = 0
 
         if i == 0:
-            continue
+            leftSum = 0
         else:
-            leftSum = prefixArray[i-1] - prefixArray[0]
+            leftSum = prefixArray[i-1]
+        
+        rightSum = prefixArray[len(arr)-1] - prefixArray[i]
+
+        if leftSum == rightSum:
+            count +=1
+    
+    return count
+
 
