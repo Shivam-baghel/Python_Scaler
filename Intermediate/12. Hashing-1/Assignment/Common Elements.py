@@ -38,6 +38,15 @@ Explantion 2:
 """
 
 def commonElements(A, B):
+    """this function returns the common elements between two integer arrays.
+
+    Args:
+        A (List): Integer array of size N.
+        B (List): Integer array of size M.
+
+    Returns:
+        _type_: Integer array denoting the common elements.
+    """
     # if len(A) <= len(B):
     #     n = len(A)
     # else:
