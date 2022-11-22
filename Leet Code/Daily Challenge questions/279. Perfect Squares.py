@@ -42,7 +42,7 @@ def numSquares(n: int) -> int:
         if (j := n - i**2) == math.isqrt(j)**2:
             return 2
         
-    while n % 4 == 0 : n /= 4                    # [3] well, it's maths, namely,
+    while n % 4 == 0 : n //= 4                    # [3] well, it's maths, namely,
     if    n % 8 != 7 : return 3                  #     the Legendre's theorem
     
     return 4                                     # [4] the only remaining option
