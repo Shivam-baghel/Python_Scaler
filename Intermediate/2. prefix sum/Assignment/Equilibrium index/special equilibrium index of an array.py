@@ -36,60 +36,61 @@ Removing arr[2] from the given array modifies arr[] to { 1, 1 } such that arr[0]
 Therefore, the required output is 3.
 
 """
-    
-def specialEquibliriumIndex(array:list):
-    """ This function will for every index. If that index is special index then the count will increase.
+
+
+def specialEquibliriumIndex(array: list):
+    """This function will for every index. If that index is special index then the count will increase.
 
     Args:
         array (list): list of intergers.
     Return:
         return: the count of special index's present in the given list of integers.
-        
+
     """
-    
+
     length_of_Array = len(array)
-    
+
     # first create prefix even sum array.
-    
-    prefix_even_sum = [0]*length_of_Array
-    prefix_even_sum[0] = array[0]
-    
-    for index in range(1,length_of_Array):
+
+    pfeven = [0] * length_of_Array
+    pfeven[0] = array[0]
+
+    for index in range(1, length_of_Array):
         # Bit manipulation way to check if value is even or odd.
-        if index&1 == 0:
-            prefix_even_sum[index] = prefix_even_sum[index-1] + array[index]
+        if index & 1 == 0:
+            pfeven[index] = pfeven[index - 1] + array[index]
         else:
-            prefix_even_sum[index] = prefix_even_sum[index-1]
-            
-    # create prefix odd sum array. 
-    
-    prefix_odd_sum = [0] * length_of_Array
-    prefix_odd_sum[0] = array[0]
-    
-    for index in range(1,length_of_Array):
+            pfeven[index] = pfeven[index - 1]
+
+    # create prefix odd sum array.
+
+    pfodd = [0] * length_of_Array
+    pfodd[0] = array[0]
+
+    for index in range(1, length_of_Array):
         # Bit manipulation way to check jif value is even or odd.
         if index & 1 == 1:
-            prefix_odd_sum[index] = prefix_odd_sum[index-1] + array[index]
+            pfodd[index] = pfodd[index - 1] + array[index]
         else:
-            prefix_odd_sum[index] = prefix_odd_sum[index-1]
-            
-    
+            pfodd[index] = pfodd[index - 1]
+
     # create a loop for checking if the paricular index is specilised index or not.
     count = 0
     for index in range(len(array)):
-        
+
         # check if a index is a special index or not.
         if index == 0:
-            sumEven = prefix_odd_sum[len(array)-1]-prefix_odd_sum[index]
-            sumOdd = prefix_even_sum[len(array)-1]-prefix_even_sum[index]
+            sumEven = pfodd[len(array) - 1] - pfodd[index]
+            sumOdd = pfeven[len(array) - 1] - pfeven[index]
         else:
-            sumEven = prefix_even_sum[index-1] + prefix_odd_sum[len(array)-1]-prefix_odd_sum[index]
-            sumOdd = prefix_odd_sum[index-1] + prefix_even_sum[len(array)-1]-prefix_even_sum[index]
-            
+            sumEven = pfeven[index - 1] + pfodd[len(array) - 1] - pfodd[index]
+            sumOdd = pfodd[index - 1] + pfeven[len(array) - 1] - pfeven[index]
+
         if sumEven == sumOdd:
-            count +=1
-    
+            count += 1
+
     return count
 
-A=[2, 1, 6, 4]
+
+A = [2, 1, 6, 4]
 print(specialEquibliriumIndex(A))
