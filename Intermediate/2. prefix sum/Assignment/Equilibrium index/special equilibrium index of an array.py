@@ -88,10 +88,10 @@ def specialEquibliriumIndex(array:list):
     prefix_even_sum = [0]*length_of_Array
     prefix_even_sum[0] = array[0]
     
-    for index,value in enumerate(array):
+    for index in range(1,length_of_Array):
         # Bit manipulation way to check if value is even or odd.
         if index&1 == 0:
-            prefix_even_sum[index] = prefix_even_sum[index-1] + value
+            prefix_even_sum[index] = prefix_even_sum[index-1] + array[index]
         else:
             prefix_even_sum[index] = prefix_even_sum[index-1]
             
@@ -100,10 +100,10 @@ def specialEquibliriumIndex(array:list):
     prefix_odd_sum = [0] * length_of_Array
     prefix_odd_sum[0] = array[0]
     
-    for index,value in enumerate(array):
+    for index in range(1,length_of_Array):
         # Bit manipulation way to check jif value is even or odd.
         if index & 1 == 1:
-            prefix_odd_sum[index] = prefix_odd_sum[index-1] + value
+            prefix_odd_sum[index] = prefix_odd_sum[index-1] + array[index]
         else:
             prefix_odd_sum[index] = prefix_odd_sum[index-1]
             
