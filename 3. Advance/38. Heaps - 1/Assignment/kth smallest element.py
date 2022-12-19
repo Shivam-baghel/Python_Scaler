@@ -7,13 +7,16 @@ import numpy as np
 
 def kthSmallestElement(array:list,k:int):
     arrayList = []
-    
+    # Push  K elements in max Heap.
+    # (heapq does not has any implementation for max heap. so we are useing min heap did some modification on data so that min behaves like max Heap)
     for i in range(k):
         heap.heappush(arrayList,(-1*array[i]))
     
     lengthOfArray = len(array)
     
     for j in range(k,lengthOfArray):
+        # if element is less than values present in heap.
+            #- push the element in heap and pop the max element in heap.
         if array[j] < (-1 * arrayList[0]):
             heap.heappush(arrayList,(-1 *array[j]))
             heap.heappop(arrayList)
