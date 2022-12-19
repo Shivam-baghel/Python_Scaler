@@ -1,0 +1,8 @@
+In this class we will learn trie which is a very efficient data structure for storing and searching strings.
+Along with the intuition of tries we will learn,
+- How to insert, delete words in trie
+- How to search for a word efficiently
+- Solve some interview problems on tries
+
+for extra reference:
+    - https://www.topcoder.com/thrive/articles/Using%20Tries
