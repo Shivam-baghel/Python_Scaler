@@ -44,7 +44,7 @@ Explanation 2:
 import heapq as heap
 
 def KPlacesApart(A:list,B:int):
-            #size of the array.
+        #size of the array.
         lengthOfArray = len(A)
         # check if B = 0.
         if B == 0:
