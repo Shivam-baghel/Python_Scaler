@@ -92,7 +92,7 @@ def add_solution(arr):
 
 
 
-
+# here curr_pos represent the row 
 def NQueens(arr,length,curr_pos):
   # if curren position is equal to length of the 2D list
   # it means you covered entire 2D list, now add the list to the ans list
@@ -106,6 +106,7 @@ def NQueens(arr,length,curr_pos):
     # we want to place queen at ith row and jth column
     # we can only place queen in 2Dlist such that queen doesn't kill each other 
     # for that we will use validating function.
+    
     if valid(arr,curr_pos,col):
       arr[curr_pos][col] = 1
       NQueens(arr,length,curr_pos+1)
