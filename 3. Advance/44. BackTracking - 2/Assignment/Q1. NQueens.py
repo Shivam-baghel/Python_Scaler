@@ -45,3 +45,90 @@ There exist only two distinct solutions to the 4-queens puzzle:
 Explanation 1:
 There exist only one distinct solutions to the 1-queens puzzle:
 """
+global ans 
+ans = []
+
+def valid(arr,row,col):
+  #iterate on above columns
+  for i in range(row):
+    if arr[i][col]== 1:
+      return False
+  
+  # checking on left diagonal
+  i = row-1
+  j = col-1
+  while i>=0 and j>=0:
+    if arr[i][j]==1:
+      return False
+    i-=1
+    j-=1
+  
+  # checking on right diagonal
+  i = row-1
+  j = col+1
+  while i>=0 and j<len(arr):
+    if arr[i][j]==1:
+      return False
+    i-=1
+    j+=1
+  
+  # returning True if there is no queen in either of the above checked direction.
+  return True
+
+def add_solution(arr):
+  curr_list = []
+  for row in range(len(arr)):
+    sol = ""
+    for col in range(len(arr)):
+      val = arr[row][col]
+      if val == 0:
+        sol+='.'
+      else:
+        sol+="Q"
+    curr_list.append(sol)
+    
+  ans.append(curr_list)
+  return
+
+
+
+
+def NQueens(arr,length,curr_pos):
+  # if curren position is equal to length of the 2D list
+  # it means you covered entire 2D list, now add the list to the ans list
+  if curr_pos == length:
+    add_solution(arr)
+    return
+  
+  # At ith row choice 
+  for col in range(0,length):
+    
+    # we want to place queen at ith row and jth column
+    # we can only place queen in 2Dlist such that queen doesn't kill each other 
+    # for that we will use validating function.
+    if valid(arr,curr_pos,col):
+      arr[curr_pos][col] = 1
+      NQueens(arr,length,curr_pos+1)
+      arr[curr_pos][col] = 0
+  
+  return
+    
+def main():
+
+  size_of_matrix = 4
+  
+  if size_of_matrix == 1:
+    print(["Q"])
+    return
+  array = []
+  for i in range(size_of_matrix):
+    sol = [0]*size_of_matrix
+    array.append(sol)
+
+  n = len(array)
+  NQueens(array,n,0)
+  print(ans)
+  
+
+if __name__ == "__main__":
+  main()
