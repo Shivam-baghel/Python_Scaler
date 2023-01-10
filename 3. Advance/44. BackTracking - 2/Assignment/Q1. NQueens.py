@@ -49,6 +49,16 @@ global ans
 ans = []
 
 def valid(arr,row,col):
+  """this function will validate. if cell is the valid cell to place a queen.
+
+  Args:
+      arr (list): 2D list.
+      row (int): cell row no.
+      col (int): cell column no.
+
+  Returns:
+      Boolean: True or False
+  """
   #iterate on above columns
   for i in range(row):
     if arr[i][col]== 1:
