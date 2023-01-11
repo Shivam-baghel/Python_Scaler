@@ -40,6 +40,10 @@ for i in A:
     sol = []
     for j in i:
         val = list(j)
-        sol.append([0 if i =='.' else int(i) for i in val])
+        for k in val:
+            if k == '.':
+                sol.append(0)
+            else:
+                sol.append(int(k))
     cur.append(sol)
 print(cur)
