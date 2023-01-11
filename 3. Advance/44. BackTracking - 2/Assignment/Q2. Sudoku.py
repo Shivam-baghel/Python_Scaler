@@ -122,7 +122,24 @@ def main():
 
     sudoku(array,0)
     print(ans)
-    
+
+def secMain():
+    A = [["53..7...."], ["6..195..."], [".98....6."], ["8...6...3"], ["4..8.3..1"], ["7...2...6"], [".6....28."], ["...419..5"], ["....8..79"]]
+    array= []
+    for i in A:
+        print(i)
+        sol = []
+        for j in i:
+            val = list(j)
+            for k in val:
+                if k == '.':
+                    sol.append(0)
+                else:
+                    sol.append(int(k))
+        array.append(sol)
+    sudoku(array,0)
+    print(ans)
 
 if __name__ == "__main__":
     main()
+    secMain()
