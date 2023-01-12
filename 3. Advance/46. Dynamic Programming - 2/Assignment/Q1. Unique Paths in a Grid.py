@@ -74,7 +74,7 @@ def uniquePathsWithObstacles(A):
          if dp[i][j] == -1:
                dp[i][j] = ways(i-1,j,A)+ways(i,j-1,A)
          
-         # return the stored value of the current cell.
+         # return the stored value of the current cell in dp matrix.
          return dp[i][j]
 
       return ways(n-1,m-1,A)
