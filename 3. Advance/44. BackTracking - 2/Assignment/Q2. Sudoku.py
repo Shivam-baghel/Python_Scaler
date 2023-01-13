@@ -100,7 +100,7 @@ def sudoku(mat, i):
 """ 
 MY Approach:
 accepting the matrix.
-giving the matrix the to sudoku function with 0th pos.
+giving the matrix to the sudoku function with 0th pos.
 sudoku function considers matrix a single list having 81 cells.
 get row and column number through cell index or the position provided in the sudoku function
 check if cell is filled or not if filled move to next cell by updating the position by 1 and giving to sudoku function.
@@ -124,8 +124,17 @@ def main():
     print(ans)
 
 def secMain():
-    A = [["53..7...."], ["6..195..."], [".98....6."], ["8...6...3"], ["4..8.3..1"], ["7...2...6"], [".6....28."], ["...419..5"], ["....8..79"]]
+    A = [["53..7...."],
+        ["6..195..."],
+        [".98....6."],
+        ["8...6...3"],
+        ["4..8.3..1"],
+        ["7...2...6"],
+        [".6....28."],
+        ["...419..5"],
+        ["....8..79"]]
     array= []
+    # for loop to convert the above list of list of string to list of list of integers.
     for i in A:
         print(i)
         sol = []

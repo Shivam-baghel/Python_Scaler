@@ -52,42 +52,42 @@ def uniquePathsWithObstacles(A):
       dp=[]
       rows, cols=n,m
       for i in range(rows):
-         col = []
-         for j in range(cols):
-               col.append(-1)
-         dp.append(col)
+            col = []
+            for j in range(cols):
+                  col.append(-1)
+            dp.append(col)
       # print(arr)
 
 
       def ways(i,j,A):
-         # checking if i or j have  become less than 0
-         if i<0 or j<0 : 
-               return 0
-         # checking if the current cell is blocked or not
-         if A[i][j] == 1:
-               return 0
-         # checking if we have reached top left cell of the matrix
-         if i == 0 and j == 0 :
-               return 1
-         
-         # if the current cell value in dp matrix is -1 i.e cell is not reached before.
-         if dp[i][j] == -1:
-               dp[i][j] = ways(i-1,j,A)+ways(i,j-1,A)
-         
-         # return the stored value of the current cell in dp matrix.
-         return dp[i][j]
+            # checking if i or j have  become less than 0
+            if i<0 or j<0 : 
+                  return 0
+            # checking if the current cell is blocked or not
+            if A[i][j] == 1:
+                  return 0
+            # checking if we have reached top left cell of the matrix
+            if i == 0 and j == 0 :
+                  return 1
+            
+            # if the current cell value in dp matrix is -1 i.e cell is not reached before.
+            if dp[i][j] == -1:
+                  dp[i][j] = ways(i-1,j,A)+ways(i,j-1,A)
+            
+            # return the stored value of the current cell in dp matrix.
+            return dp[i][j]
 
       return ways(n-1,m-1,A)
-   
+
 def main():
-   A = [
-         [0, 0, 0],
-         [0, 1, 0],
-         [0, 0, 0]
+      A = [
+            [0, 0, 0],
+            [0, 1, 0],
+            [0, 0, 0]
       ]
-   
-   print(uniquePathsWithObstacles(A))
+
+      print(uniquePathsWithObstacles(A))
 
 if __name__ == "__main__":
-   main()
+      main()
 
