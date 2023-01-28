@@ -40,6 +40,21 @@ Explanation 2:
  A = "Anshuman" and B = "Antihuman"
  After applying operations: Replace s with t and insert i before h. We get A = B
 """
+def Get_Distance(String_1:str,String_2:str):
+    length_of_str1 = len(String_1)
+    length_of_str2 = len(String_2)
+    
+    dp = []
+    for i in range(length_of_str1):
+        col = []
+        for j in range(length_of_str2):
+            col.append(-1)
+        dp.append(col)
+    
+    def Edit_distance(s1:str,s2:str,s1_p:int,s2_p:int):
+        if s1_p < 0 and s2_p < 0:   # if s1 and s2 both are empty stirngs.
+            return 0
+        
 def main():
     return
 if __name__ == "__main__":
