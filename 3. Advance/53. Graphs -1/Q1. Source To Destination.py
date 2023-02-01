@@ -2,7 +2,17 @@
 given a undirected graph and source node and destination node. check if you  can travel from source node to destination node.
 """
 from collections import deque
-
+""" My idea: 
+    make a list of list integers meaning the index of list of integers in the list is having the direct connection as index value as source node and integer in the particular list as destination nodes.
+    
+    make a visited array of same length as the no.of nodes containing false. meaning none of the nodes have been visited yet.
+    
+    create a queue and append the source node and make visited array[source] == True meaning that particular index is visited or that node is visited.
+    check in list named g that source node is having any connecting nodes. and go through each of those connecting nodes and check if they have any connecting nodes repeat this untill all the connecting nodes gets over.
+    mark true for all the nodes that you were able to visit in visited array.
+    
+    return the asked visited node from visited array.
+"""
 def BreadthFirstSearch(node,edge,u,v,source,destination):
     
     g = [[] for i in range(node+1)]
@@ -27,10 +37,11 @@ def BreadthFirstSearch(node,edge,u,v,source,destination):
         
         for j in range(len(g[x])):
             y = g[x][j]
+            # in visited array if index is false make it true and append it to queue.
             if visited[y] == False:
                 visited[y] = True
                 queue.append(y)
-                
+    # return distination index of the visited array.
     return visited[destination]
 
 def main():
