@@ -1,5 +1,5 @@
 def path(n,e,u,v,source,dest):
-    g = [[] for i in range n]
+    g = [ [] for _ in range(n)]
     visited = [False] *(n+1)
     dfs(source,g,visited)
     return visited[dest]
