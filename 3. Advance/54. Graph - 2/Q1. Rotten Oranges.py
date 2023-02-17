@@ -29,13 +29,13 @@ def rottenOranges(mat):
             if x-1 >= 0 and mat[x-1][y] == 1:
                 mat[x-1][y] = 2
                 queue.append([x-1,y])
-            if x+1 >= 0 and mat[x+1][y] == 1:
+            if x+1 < N and mat[x+1][y] == 1:
                 mat[x+1][y] = 2
                 queue.append([x+1,y])
             if y-1 >= 0 and mat[x][y-1] == 1:
                 mat[x][y-1] = 2
                 queue.append([x,y-1])
-            if y+1 >= 0 and mat[x][y+1] == 1:
+            if y+1 < M and mat[x][y+1] == 1:
                 mat[x][y+1] = 2
                 queue.append([x,y+1])
     
