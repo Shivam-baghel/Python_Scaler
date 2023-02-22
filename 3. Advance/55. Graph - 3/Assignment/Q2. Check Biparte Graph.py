@@ -63,26 +63,27 @@ def biparte(node,mat):
         # create a color array. 0 = no color, 1 = green color, 2 = blue color.
         color = [0]*(node+1)
         
-        for i in range(0,node+1):
+        # for i in range(0,node+1):
             
-            if color[i] == 0:
-                color[i]= 1
-                queue.append(i)
-                
-                while len(queue)>0:
-                    
-                    u = queue.popleft()
-                    # iterate on adj nodes of u
-                    for j in range(len(g[u])):
-                        # all the nodes connected to g[u]
-                        v = g[u][j]
-                        
-                        if color[v] == 0:
-                            color[v] = 3-color[u]
-                            queue.append(v)
-                        elif color[u] == color[v]:
-                            return 0
+        #     if color[i] == 0:
+        i=0
+        color[i]= 1
+        queue.append(i)
         
+        while len(queue)>0:
+            
+            u = queue.popleft()
+            # iterate on adj nodes of u
+            for j in range(len(g[u])):
+                # all the nodes connected to g[u]
+                v = g[u][j]
+                
+                if color[v] == 0:
+                    color[v] = 3-color[u]
+                    queue.append(v)
+                elif color[u] == color[v]:
+                    return 0
+
         return 1
     
     
