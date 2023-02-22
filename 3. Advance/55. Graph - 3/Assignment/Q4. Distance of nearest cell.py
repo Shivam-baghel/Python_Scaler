@@ -1,11 +1,8 @@
 """ 
 Q4. Distance of nearest cell
 Given a matrix of integers A of size N x M consisting of 0 or 1.
-
 For each cell of the matrix find the distance of nearest 1 in the matrix.
-
 Distance between two cells (x1, y1) and (x2, y2) is defined as |x1 - x2| + |y1 - y2|.
-
 Find and return a matrix B of size N x M which defines for each cell in A distance of nearest 1 in the matrix A.
 
 NOTE: There is atleast one 1 is present in the matrix.
@@ -68,15 +65,16 @@ def nearestCell(grid):
     
     for i in range(N):
         for j in range(M):
-            # we are appending all the Ones intially in Queue 
+            # we are appending all the Ones intially in Queue and making all the cells of visited matrix True
             if grid[i][j] == 1:
                 visited[i][j] = True 
                 q.append((i,j ,0))
                 grid[i][j] = 0              # make it zero 
-                
+    # directions you can go from a particular cell   
     directions = [[1,0],[0,1],[-1,0],[0,-1]]
     
     while q:
+        # assigning the values
         row , col  , count = q.popleft()
         
         for i , j in directions:
