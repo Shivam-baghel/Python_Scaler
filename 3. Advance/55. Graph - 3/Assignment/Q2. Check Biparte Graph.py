@@ -56,35 +56,35 @@ def biparte(node,mat):
             b = mat[i][1]
             g[a].append(b)
             # make the below line comment to make code work for directed graph
-            # g[b].append(a)
+            g[b].append(a)
         
         # create a queue
         queue = deque()
         # create a color array. 0 = no color, 1 = green color, 2 = blue color.
         color = [0]*(node+1)
         
-        # for i in range(0,node+1):
+        for i in range(0,node+1):
             
-        #     if color[i] == 0:
-        i=0
-        color[i]= 1
-        queue.append(i)
-        
-        while len(queue)>0:
-            
-            u = queue.popleft()
-            # iterate on adj nodes of u
-            for j in range(len(g[u])):
-                # all the nodes connected to g[u]
-                v = g[u][j]
+            if color[i] == 0:
                 
-                if color[v] == 0:
-                    color[v] = 3-color[u]
-                    queue.append(v)
-                elif color[u] == color[v]:
-                    return 0
+                color[i]= 1
+                queue.append(i)
+                
+                while len(queue)>0:
+                    
+                    u = queue.popleft()
+                    # iterate on adj nodes of u
+                    for j in range(len(g[u])):
+                        # all the nodes connected to g[u]
+                        v = g[u][j]
+                        
+                        if color[v] == 0:
+                            color[v] = 3-color[u]
+                            queue.append(v)
+                        elif color[u] == color[v]:
+                            return 0
 
-        return 1
+                return 1
     
     
 # Input 1:
@@ -94,7 +94,37 @@ def biparte(node,mat):
 
 # Input 2:
 
-A = 3
-B = [ [0, 1], [0, 2], [1, 2] ]
+# A = 3
+# B = [ [0, 1], [0, 2], [1, 2] ]
+
+# Input 3:
+
+# A = 10
+# B = [
+#   [7, 8],
+#   [1, 2],
+#   [0, 9],
+#   [1, 3],
+#   [6, 7],
+#   [0, 3],
+#   [2, 5],
+#   [3, 8],
+#   [4, 8]
+# ]
+
+# Input 4:
+
+A = 9
+B = [
+  [2, 5],
+  [6, 7],
+  [4, 8],
+  [2, 3],
+  [0, 3],
+  [4, 7],
+  [1, 8],
+  [3, 8],
+  [1, 3]
+]
 
 print(biparte(A,B))
