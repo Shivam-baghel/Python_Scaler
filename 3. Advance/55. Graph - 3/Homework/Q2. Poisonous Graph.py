@@ -112,9 +112,9 @@ def poisonousGraph(vertice,edgeMat):
     x = len(evenSet)
     # y represents odd
     y = len(oddSet)
-    ans = ((2**x)+(2**y))%mod
+    ans1 = ((2**x)+(2**y))%mod
     for i in range(vertice):
-        ans = ans*ans
+        ans = (ans1*ans1)%mod
         
     return ans
 
