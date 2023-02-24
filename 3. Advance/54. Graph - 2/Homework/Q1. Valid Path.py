@@ -49,29 +49,40 @@ Explanation 1:
 Explanation 2:
  There is NO valid path in this case
 """
-global flag 
-flag = False
+
 
 def dfs(x1, y1, x2, y2, visited):
+    
     # check if x1 or y1 are out of bounds
     if (x1 < 0 or y1 < 0 or x1 >= len(visited) or y1 >= len(visited[0]) or visited[x1][y1]):
-        return
-    # if x1 and y1 are equal to x2 and y2 then change the value of the flag and return.
-    if (x1 == x2 and y1 == y2):
-        flag = True
-        return
+        return False
     
     # as we have visited this cell right now. make this true in visited array.
     visited[x1][y1] = True
+    # if x1 and y1 are equal to x2 and y2 then change the value of the flag and return.
+    if (x1 == x2 and y1 == y2):
+        return True
+    
     # visited all adjacent cells around the current cell.
-    dfs(x1 - 1, y1 - 1, x2, y2, visited)
-    dfs(x1 - 1, y1 + 1, x2, y2, visited)
-    dfs(x1 + 1, y1 - 1, x2, y2, visited)
-    dfs(x1 + 1, y1 + 1, x2, y2, visited)
-    dfs(x1 - 1, y1, x2, y2, visited)
-    dfs(x1 + 1, y1, x2, y2, visited)
-    dfs(x1, y1 - 1, x2, y2, visited)
-    dfs(x1, y1 + 1, x2, y2, visited)
+    if dfs(x1 - 1, y1 - 1, x2, y2, visited):
+        return True
+    if dfs(x1 - 1, y1 + 1, x2, y2, visited):
+        return True
+    if dfs(x1 + 1, y1 - 1, x2, y2, visited):
+        return True
+    if dfs(x1 + 1, y1 + 1, x2, y2, visited):
+        return True
+    if dfs(x1 - 1, y1, x2, y2, visited):
+        return True
+    if dfs(x1 + 1, y1, x2, y2, visited):
+        return True
+    if dfs(x1, y1 - 1, x2, y2, visited):
+        return True
+    if dfs(x1, y1 + 1, x2, y2, visited):
+        return True
+
+    return False
+
 
     
 def validPath(A, B, C, D, E, F):
@@ -107,10 +118,9 @@ def validPath(A, B, C, D, E, F):
     # check if source cell or destination cell are reachable or not
     if visited[x][y] == True or visited[0][0] == True:
         return 'NO'
-    # if source cell or destination cell are reachable then try to find out the path between source and destination cell. if path exist update the flag.
-    dfs(0, 0, x, y, visited)
-    # according to the flag value return corresponding answers.
-    if flag :
+    # if source cell or destination cell are reachable then try to find out the path between source and destination cell. If True return yes else no
+    
+    if dfs(0, 0, x, y, visited):
         return 'YES'
     else:
         return 'NO'
@@ -122,52 +132,3 @@ R = 1
 A = [2]
 B = [3]
 print(validPath(x,y,N,R,A,B))
-""" 
-
-public class ValidPaths {
-    boolean flag = false;
-
-    void dfs(int x1, int y1, int x2, int y2, boolean visited[][]) {
-        if (x1 < 0 || y1 < 0 || x1 >= visited.length || y1 >= visited[0].length || visited[x1][y1])
-            return;
-        if (x1 == x2 && y1 == y2) {
-            flag = true;
-            return;
-        }
-
-        visited[x1][y1] = true;
-
-        dfs(x1 - 1, y1 - 1, x2, y2, visited);
-        dfs(x1 - 1, y1 + 1, x2, y2, visited);
-        dfs(x1 + 1, y1 - 1, x2, y2, visited);
-        dfs(x1 + 1, y1 + 1, x2, y2, visited);
-        dfs(x1 - 1, y1, x2, y2, visited);
-        dfs(x1 + 1, y1, x2, y2, visited);
-        dfs(x1, y1 - 1, x2, y2, visited);
-        dfs(x1, y1 + 1, x2, y2, visited);
-    }
-
-    public String solve(int x, int y, int noOfCircles, int radius, int[] E, int[] F) {
-        boolean[][] visited = new boolean[x + 1][y + 1];
-
-        for (int i = 0; i <= x; i++) {
-            for (int j = 0; j <= y; j++) {
-                for (int k = 0; k < noOfCircles; k++) {
-
-                    int dist = (i - E[k]) * (i - E[k]) + (j - F[k]) * (j - F[k]);
-                    if (dist <= radius * radius) {
-                        visited[i][j] = true;
-                        break;
-                    }
-                }
-            }
-        }
-
-        if (visited[x][y] || visited[0][0]) {
-            return “NO”;
-        }
-
-        dfs(0, 0, x, y, visited);
-        return flag ? “YES” : “NO”;
-    }
-}"""
