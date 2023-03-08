@@ -1,5 +1,4 @@
 """ 
-
 Q3. Cycle in Directed Graph
 Given an directed graph having A nodes. A matrix B of size M x 2 is given which represents the M edges such that there is a edge directed from node B[i][0] to node B[i][1].
 
