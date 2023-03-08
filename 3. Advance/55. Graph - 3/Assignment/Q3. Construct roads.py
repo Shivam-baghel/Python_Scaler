@@ -48,6 +48,18 @@ Explanation 2:
  We can add two roads between cities (4, 2) and (4, 5).
 
 """
+"""
+A few more lines of code to get you from Q3. Check Bipartite Graph to Q4. Construct Roads
+4 Functions 
+graphBuilder -> builds our flattened graph
+
+isBiPartite. -> checks bipartite condition with queue.
+
+colorUpdate. -> generates the updated color/visited array after done with traversal.
+
+Solve(A,B,color)  -> Use dictionary to get counts of each state/color and return all combinations possible . 
+                    This function also handles return 0 incase graph isn't bipartite
+"""
 
 from collections import deque
 
