@@ -47,14 +47,42 @@ Explanation 1:
 Explanation 2:
  We can choose bridges (1, 2, 1), (2, 3, 2) and (1, 4, 3), where the total cost incurred will be (1 + 2 + 3) = 6.
 """
+def find(x,component):
+    if x == component[x]:
+        return x
+    component[x] = find(component[x],component)
+    return component[x]
 
-def islands(node, mat):
-    #sort the mat
+def CommutableIslands(node, mat):
+    # sort the mat based on wieght
     def algo(e):
         return e[2]
     mat.sort(key = algo)
     
-    return mat
+    # create component list
+    comp = [0]*(node+1)
+    
+    # fill component list with their values
+    for i in range(node+1):
+        comp[i] = i
+    
+    # get min weight
+    ans = 0
+    for i in range(len(mat)):
+        d = mat[i]
+        w = d[2]
+        u = d[0]
+        v = d[1]
+        
+        # find super component for u and v
+        cu = find(u,comp)
+        cv = find(v,comp)
+        
+        if cu != cv:
+            ans += w
+            comp[max(cu,cv)] = comp[min(cu,cv)]
+            
+    return ans
 
 A = 4
 B = [  [1, 2, 1],
@@ -63,4 +91,4 @@ B = [  [1, 2, 1],
     [4, 3, 2],
     [1, 3, 10]  ]
 
-print(islands(A,B))
+print(CommutableIslands(A,B))
