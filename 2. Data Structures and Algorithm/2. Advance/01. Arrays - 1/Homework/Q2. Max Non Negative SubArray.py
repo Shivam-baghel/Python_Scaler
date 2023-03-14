@@ -15,17 +15,16 @@ NOTE:
 
 
 Input Format:
-
 The first and the only argument of input contains an integer array A, of length N.
+
 Output Format:
-
 Return an array of integers, that is a subarray of A that satisfies the given conditions.
-Constraints:
 
+Constraints:
 1 <= N <= 1e5
 -INT_MAX < A[i] <= INT_MAX
-Examples:
 
+Examples:
 Input 1:
     A = [1, 2, 5, -7, 2, 3]
 
@@ -49,6 +48,37 @@ Explanation 2:
 
 def maxSubarrayNonNegative(array):
     n = len(array)
-    largestSum = float('-inf')
-    maxTillNow = float('-inf')
+    # maximum sum
+    largestSum = 0
+    # sum till current index
+    maxtillNow = 0
+    # start index
     start = 0
+    # ending index
+    end = 0
+    # length of the suba array
+    length = 0
+    # current start index
+    s=0
+    
+    for i in range(n):
+        if array[i] < 0:
+            maxtillNow = 0
+            s = i+1
+        else:
+            maxtillNow += array[i]
+
+            if largestSum < maxtillNow:
+                largestSum = maxtillNow
+                start = s
+                end = i+1
+                length = i - s
+            elif largestSum == maxtillNow and (i-s > length):
+                
+                start = s
+                end = i=1
+    return largestSum,array[start:end]
+               
+
+A = [1, 2, 5, -7, 2, 3]
+print(maxSubarrayNonNegative(A))
