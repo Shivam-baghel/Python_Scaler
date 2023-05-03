@@ -33,7 +33,8 @@ Explanation 1:
 Explanation 2:
 No water is trapped.
 """
-# Idea 1 using recusion
+# Idea 1 using recusion This is from the book
+
 def trap(A):
 
     # Finds the index with maximum height.
@@ -51,3 +52,11 @@ def trap(A):
         return partialSum
     
     return (trappingWaterTillEnd(A[:max_h]) + trappingWaterTillEnd(reversed(A[max_h+1:])))
+
+# idea 2 taught in calss.
+    # for a current height check the max height on the left and the right side of the current height.
+    # find out which is the minimum of those two height and minus that with current height. you will get water stored on the current building and store the value in new list caller water.
+    # find the water value for each index in the list building hieght. return the addition of the entire water.
+
+def water(array):
+    
