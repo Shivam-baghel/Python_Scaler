@@ -2,4 +2,4 @@
 This repository will track my python development progress.
 Currently i am doing DSA(Data Structure and Algorithm).
 
-I did sql
+I learned sql too.
