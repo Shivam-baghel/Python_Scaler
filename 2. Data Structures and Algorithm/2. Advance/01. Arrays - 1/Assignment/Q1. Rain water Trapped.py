@@ -59,4 +59,4 @@ def trap(A):
     # find the water value for each index in the list building hieght. return the addition of the entire water.
 
 def water(array):
-    
+    return
