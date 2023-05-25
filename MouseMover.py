@@ -40,3 +40,5 @@ while(True):
 	
 	win32api.SetCursorPos((int(cx),int(cy)))
 	time.sleep(0.001)
+
+# print("hello")
