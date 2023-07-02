@@ -1,5 +1,6 @@
 """ 
 Q3. Different Bits Sum Pairwise
+
 We define f(X, Y) as the number of different corresponding bits in the binary representation of X and Y.
 For example, f(2, 7) = 2, since the binary representation of 2 and 7 are 010 and 111, respectively. The first and the third bit differ, so f(2, 7) = 2.
 
