@@ -1,11 +1,6 @@
 /*
 181. Employees Earning More Than Their Managers
-Easy
-2.3K
-225
-Companies
-SQL Schema
-Pandas Schema
+
 Table: Employee
 
 +-------------+---------+

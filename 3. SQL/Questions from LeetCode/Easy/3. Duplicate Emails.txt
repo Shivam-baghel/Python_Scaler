@@ -1,11 +1,6 @@
 /*
 182. Duplicate Emails
-Easy
-1.8K
-62
-Companies
-SQL Schema
-Pandas Schema
+
 Table: Person
 
 +-------------+---------+
