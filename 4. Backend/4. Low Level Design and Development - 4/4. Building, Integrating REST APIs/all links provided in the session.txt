@@ -1,0 +1,11 @@
+1. About SOAP and Rest- to know difference and similarities
+	https://aws.amazon.com/compare/the-difference-between-soap-rest/#:~:text=The%20two%20applications%20share%20data,exchange%20data%20in%20multiple%20formats
+	
+2. Api Design best practices
+	https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design
+	
+3. Fake store api docs
+	https://fakestoreapi.com/docs
+
+4. Product Requirements Document (PRD) for Ecommerce Website
+	https://docs.google.com/document/d/1Gn2ib5YhhpcFUiWGAUbCpg0ZPh3m_wSA-9IolGMjkIE/edit#heading=h.hteovoit9b96
