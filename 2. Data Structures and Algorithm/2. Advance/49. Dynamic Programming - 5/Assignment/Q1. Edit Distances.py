@@ -55,7 +55,6 @@ def Get_Distance(String_1:str,String_2:str):
         if s1_p < 0 and s2_p < 0:   # if s1 and s2 both are empty stirngs.
             return 0
         
-def main():
-    return
+
 if __name__ == "__main__":
-    main()
+    pass

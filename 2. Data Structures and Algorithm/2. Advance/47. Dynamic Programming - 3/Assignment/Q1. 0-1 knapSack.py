@@ -73,11 +73,8 @@ def GetMax( A, B, C):
     
     return knapSack(n-1,max_weight,weight,value)
 
-def main():
+if __name__ == "__main__":
     A = [60, 100, 120]
     B = [10, 20, 30]
     C = 50
     print(GetMax(A,B,C))
-    
-if __name__ == "__main__":
-    main()

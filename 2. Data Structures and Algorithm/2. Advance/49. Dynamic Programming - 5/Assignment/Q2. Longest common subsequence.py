@@ -57,11 +57,8 @@ def Get_Long_Common_Length(string_1,string_2):
         return dp[str1_p][str2_p]
     
     return LongestCommonSubsequence(string_1,string_2,length_of_str1-1,length_of_str2-1)
-def main():
+
+if __name__ == "__main__":
     A = "abbcdgf"
     B = "bbadcgf"
     print(Get_Long_Common_Length(A,B))
-    return
-
-if __name__ == "__main__":
-    main()
