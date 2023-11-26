@@ -1,5 +1,5 @@
 """ 
-Q5. Sum of Digits!
+Q2. Sum of Digits!
 Solved
 feature icon
 Get your doubts resolved blazing fast with Chat GPT Help
