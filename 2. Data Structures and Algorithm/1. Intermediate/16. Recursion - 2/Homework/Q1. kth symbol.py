@@ -43,3 +43,24 @@ Explanation 2:
  Row 2: 01
 '''
 
+def kthSymbol(n:int,k:int):
+    if n==1 and k==1:
+        return 0
+    
+    length = 2**(n-1)
+    mid = length//2
+    
+    if k <= mid:
+        return kthSymbol(n-1,k)
+    else:
+        ans = kthSymbol(n-1,k-mid)
+        return 1-ans
+    
+    
+if __name__ == "__main__":
+    n=2
+    k=2
+    print(kthSymbol(n,k))
+    
+    
+'''To understand how this code works Please watch this video on Youtube :https://youtu.be/Cw7A8YU0WjY?si=YkA3HYRKC3wIWCTH'''
