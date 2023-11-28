@@ -54,38 +54,40 @@ second , we have to do the modulus of the result given by pow function with c.
 ex c = 3, 8%3= 2
  ans would be 2.
 '''
-def pow(a,b):
-    
+
+
+def pow(a, b):
     if b == 0:
         return 1
-    
-    return pow(a,b-1)*a
 
-def implementPow(a,b,c):
-    
-    powResult = pow(a,b)
-    return powResult%3
+    return pow(a, b - 1) * a
+
+
+def implementPow(a, b, c):
+    powResult = pow(a, b)
+    return powResult % 3
+
 
 ''' More efficient way is below '''
 
+
 def power(x, y, mod):
     if y == 0:
-        return 1%mod
+        return 1 % mod
     if y == 1:
-        return x%mod
+        return x % mod
 
-    val = power(x, y//2, mod)
+    val = power(x, y // 2, mod)
 
-    if y&1:
-        return (val%mod*val%mod*x%mod)%mod
+    if y & 1:
+        return (val % mod * val % mod * x % mod) % mod
     else:
-        return (val%mod*val%mod)%mod
-    
+        return (val % mod * val % mod) % mod
+
 
 if __name__ == "__main__":
     a = 2
     b = 3
     c = 3
-    print(implementPow(a,b,c))
-    print(power(a,b,c))
-    
+    print(implementPow(a, b, c))
+    print(power(a, b, c))

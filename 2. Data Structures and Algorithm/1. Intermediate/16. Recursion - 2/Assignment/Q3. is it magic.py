@@ -44,14 +44,14 @@ Explanation 2:
  Single digit is not 1, so it's not a magic number. Return 0.
 '''
 
-def sunOfDigits( A):
+def sumOfDigits( A):
     if A == 0: return 0
-    return  sunOfDigits(A//10) + A%10
+    return  sumOfDigits(A//10) + A%10
 
 def magic(A):
     if A <= 9:
         return 1 if A == 1 else 0
-    return magic( sunOfDigits(A))
+    return magic( sumOfDigits(A))
 
 
 if __name__ == "__main__":
