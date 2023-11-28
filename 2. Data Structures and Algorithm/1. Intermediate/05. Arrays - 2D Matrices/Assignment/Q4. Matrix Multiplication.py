@@ -59,19 +59,19 @@ Explanation 2:
 
 
 def matrix_multiplication(A, B):
-    rowA = len(A)
-    colA = len(A[0])
-    rowB = len(B)
-    colB = len(B[0])
+     rowA = len(A)
+     colA = len(A[0])
+     rowB = len(B)
+     colB = len(B[0])
 
-    rows, cols = (rowA, colB)  # p x q
-    c = [[0 for i in range(cols)] for j in range(rows)]  # gen c
+     rows, cols = (rowA, colB)  # p x q
+     c = [[0 for i in range(cols)] for j in range(rows)]  # gen c
 
-    for i in range(rowA):
-        for j in range(colB):
-            for k in range(rowB):
-                row = A[i][k]
-                col = B[k][j]
-                c[i][j] += row * col
+     for i in range(rowA):
+          for j in range(colB):
+               for k in range(rowB):
+                    row = A[i][k]
+                    col = B[k][j]
+                    c[i][j] += row * col
 
-    return c
+     return c
