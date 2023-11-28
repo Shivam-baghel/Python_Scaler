@@ -43,26 +43,26 @@ Explanation 2:
  Row 2: 01
 '''
 
-def kthSymbol(n:int,k:int):
-    if n==1 and k==1:
+
+def kth_symbol(number: int, position: int) -> int:
+    if number == 1 and position == 1:
         return 0
-    
-    length = 2**(n-1)
-    mid = length//2
-    
-    if k <= mid:
-        return kthSymbol(n-1,k)
+
+    length = 2 ** (number - 1)
+    mid = length // 2
+
+    if position <= mid:
+        return kth_symbol(number - 1, position)
     else:
-        ans = kthSymbol(n-1,k-mid)
-        return 1-ans
-    
-    
+        ans = kth_symbol(number - 1, position - mid)
+        return 1 - ans
+
+
 if __name__ == "__main__":
-    n=2
-    k=2
-    print(kthSymbol(n,k))
-    
-    
+    n = 2
+    k = 2
+    print(kth_symbol(n, k))
+
 '''
 To understand how this code works Please watch this video on Youtube :
 https://youtu.be/Cw7A8YU0WjY?si=YkA3HYRKC3wIWCTH
