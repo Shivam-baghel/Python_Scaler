@@ -63,4 +63,8 @@ if __name__ == "__main__":
     print(kthSymbol(n,k))
     
     
-'''To understand how this code works Please watch this video on Youtube :https://youtu.be/Cw7A8YU0WjY?si=YkA3HYRKC3wIWCTH'''
+'''
+To understand how this code works Please watch this video on Youtube :
+https://youtu.be/Cw7A8YU0WjY?si=YkA3HYRKC3wIWCTH
+
+'''
