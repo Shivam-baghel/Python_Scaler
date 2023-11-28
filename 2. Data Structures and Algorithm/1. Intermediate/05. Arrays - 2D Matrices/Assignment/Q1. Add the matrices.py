@@ -1,4 +1,4 @@
-""" 
+"""
 Q1. Add the matrices
 
 You are given two matrices A & B of same size, you have to return another matrix which is the sum of A and B.
@@ -64,15 +64,27 @@ A + B = [[1+9, 2+9, 3+7],
          [11, 14, 12]].
 """
 
-def add_matrices( A, B):
+
+def add_matrices(A, B):
     lengthOfRow = len(A)
     lengthOfColumn = len(A[0])
-    actualres =[]
+    actualres = []
     for i in range(lengthOfRow):
-        res=[]
+        res = []
         for j in range(lengthOfColumn):
             sum = A[i][j] + B[i][j]
             res.append(sum)
         actualres.append(res)
 
     return actualres
+
+
+if __name__ == '__main__':
+    A = [[1, 2, 3],
+         [4, 5, 6],
+         [7, 8, 9]]
+
+    B = [[9, 8, 7],
+         [6, 5, 4],
+         [3, 2, 1]]
+    print(add_matrices(A, B))

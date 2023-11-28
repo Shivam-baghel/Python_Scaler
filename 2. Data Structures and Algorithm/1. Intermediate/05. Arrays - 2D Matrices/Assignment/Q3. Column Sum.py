@@ -37,17 +37,24 @@ Column 3 = 3+7+3 = 13
 Column 4 = 4+8+4 = 16
 """
 
-def column_sum( A):
+
+def column_sum(A):
     lengthOfColumn = len(A[0])
     lengthOfRow = len(A)
     res = []
     for j in range(lengthOfColumn):
-        sum = 0
+        inner_sum = 0
         for i in range(lengthOfRow):
-            sum = sum + A[i][j]
+            inner_sum = inner_sum + A[i][j]
 
-        res.append(sum)
+        res.append(inner_sum)
 
     return res
-        
-        
+
+
+
+if __name__ == '__main__':
+    a = [[1,2,3,4]
+        [5,6,7,8]
+        [9,2,3,4]]
+    print(column_sum(a))

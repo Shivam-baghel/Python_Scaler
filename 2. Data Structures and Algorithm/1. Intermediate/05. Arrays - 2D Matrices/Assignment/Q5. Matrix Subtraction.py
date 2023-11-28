@@ -58,11 +58,12 @@ Explanation 2:
  [[1, 1]] - [[2, 3]] = [[1 - 2, 1 - 3]] = [[-1, -2]]
 """
 
-def matrix_sub( A, B):
-    lengthOfRow = len(A)
-    lengthOfColumn = len(A[0])
-    actualres =[]
-    
+
+def matrix_sub(A, B):
+    lengthOfRow: int = len(A)
+    lengthOfColumn: int = len(A[0])
+    actualres = []
+
     # my brute force way
     # for i in range(lengthOfRow):
     #     res=[]
@@ -72,11 +73,21 @@ def matrix_sub( A, B):
     #     actualres.append(res)
 
     for i in range(lengthOfRow):
-        actualres.append([0]*lengthOfColumn)
-    
+        actualres.append([0] * lengthOfColumn)
+
     for j in range(lengthOfRow):
         for k in range(lengthOfColumn):
-            actualres[j][k] = A[j][k] - B[j][k] 
-
+            actualres[j][k] = A[j][k] - B[j][k]
 
     return actualres
+
+if __name__ == '__main__':
+    A = [[1, 2, 3],
+         [4, 5, 6],
+         [7, 8, 9]]
+
+    B = [[9, 8, 7],
+         [6, 5, 4],
+         [3, 2, 1]]
+
+    print(matrix_sub(A, B))

@@ -43,7 +43,8 @@ Explanation 2:
 After transposing the matrix, A becomes [[1, 1, 1], [2, 2, 2]]
 """
 
-def matrix_transpose( A):
+
+def matrix_transpose(A):
     N = len(A)
     M = len(A[0])
     C = [[0] * N for _ in range(M)]
@@ -51,4 +52,8 @@ def matrix_transpose( A):
         for j in range(M):
             C[j][i] = A[i][j]
     return C
-    
+
+if __name__ == '__main__':
+    A = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+    print(matrix_transpose(A))

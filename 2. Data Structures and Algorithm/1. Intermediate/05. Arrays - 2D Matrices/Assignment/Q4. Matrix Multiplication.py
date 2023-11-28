@@ -57,22 +57,21 @@ Explanation 2:
  [[1, 1]].[[2], [3]] = [[1 * 2 + 1 * 3]] = [[5]]
 """
 
-def matrix_multiplication( A, B):
+
+def matrix_multiplication(A, B):
     rowA = len(A)
     colA = len(A[0])
     rowB = len(B)
     colB = len(B[0])
 
-
-    rows, cols = (rowA, colB) # p x q
-    C = [[0 for i in range(cols)] for j in range(rows)] # gen C
-
+    rows, cols = (rowA, colB)  # p x q
+    c = [[0 for i in range(cols)] for j in range(rows)]  # gen c
 
     for i in range(rowA):
         for j in range(colB):
             for k in range(rowB):
                 row = A[i][k]
                 col = B[k][j]
-                C[i][j] += row * col
+                c[i][j] += row * col
 
-    return(C)
+    return c

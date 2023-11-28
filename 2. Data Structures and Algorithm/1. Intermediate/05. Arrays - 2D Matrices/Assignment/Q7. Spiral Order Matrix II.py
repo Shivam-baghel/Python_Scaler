@@ -53,27 +53,29 @@ Explanation 2:
 
 """
 
-def generate_matrix(self, A):
-    N = A
-    res = [[0]*N for i in range(N)]
+
+def generate_matrix(arr):
+    N = arr
+    res = [[0] * N for i in range(N)]
     row = 0
     col = 0
     num = 1
-    if N == 1: return [[1]]
+    if N == 1:
+        return [[1]]
     while N > 1:
-        for i in range(N-1):
+        for i in range(N - 1):
             res[row][col] = num
             num += 1
             col += 1
-        for i in range(N-1):
+        for i in range(N - 1):
             res[row][col] = num
             num += 1
             row += 1
-        for i in range(N-1):
+        for i in range(N - 1):
             res[row][col] = num
             num += 1
             col -= 1
-        for i in range(N-1):
+        for i in range(N - 1):
             res[row][col] = num
             num += 1
             row -= 1
