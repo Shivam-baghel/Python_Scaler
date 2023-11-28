@@ -77,7 +77,9 @@ def uniquePathsWithObstacles(A):
 
   return minSumPath(n-1,m-1,A)
 
-def main():
+
+if __name__ == "__main__":
+  
   A = [
         [1, 3, 2],
         [4, 3, 1],
@@ -85,6 +87,3 @@ def main():
       ] 
 
   print(uniquePathsWithObstacles(A))
-
-if __name__ == "__main__":
-  main()

@@ -72,11 +72,8 @@ def GetMaxUnbounded( A, B, C):
     
     return knapSack(n-1,max_weight,weight,value)
 
-def main():
+if __name__ == "__main__":
     A = 10
     B = [5]
     C = [10]
     print(GetMaxUnbounded(A,B,C))
-    
-if __name__ == "__main__":
-    main()

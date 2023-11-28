@@ -79,7 +79,7 @@ def uniquePathsWithObstacles(A):
 
       return ways(n-1,m-1,A)
 
-def main():
+if __name__ == "__main__":
       A = [
             [0, 0, 0],
             [0, 1, 0],
@@ -87,7 +87,4 @@ def main():
       ]
 
       print(uniquePathsWithObstacles(A))
-
-if __name__ == "__main__":
-      main()
 

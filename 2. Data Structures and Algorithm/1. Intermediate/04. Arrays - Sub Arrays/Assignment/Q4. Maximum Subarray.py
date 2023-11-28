@@ -40,7 +40,7 @@ All elements are greater than B, which means we cannot select any subarray.
 Hence, the answer is 0.
 """
 
-def findMaxSubarraySum(arr, n, sum):
+def findMaxSubarraySum(arr, n, sumb):
 	
 	# To store current sum and
 	# max sum of subarrays
@@ -53,12 +53,12 @@ def findMaxSubarraySum(arr, n, sum):
 		
 		# Update max_sum if it becomes
 		# greater than curr_sum
-		if (curr_sum <= sum):
+		if (curr_sum <= sumb):
 			max_sum = max(max_sum, curr_sum)
 
 		# If curr_sum becomes greater than sum
 		# subtract starting elements of array
-		while (curr_sum + arr[i] > sum and start < i):
+		while (curr_sum + arr[i] > sumb and start < i):
 			curr_sum -= arr[start]
 			start += 1
 		
@@ -66,7 +66,7 @@ def findMaxSubarraySum(arr, n, sum):
 		curr_sum += arr[i]
 
 	# Adding an extra check for last subarray
-	if (curr_sum <= sum):
+	if (curr_sum <= sumb):
 		max_sum = max(max_sum, curr_sum)
 
 	return max_sum

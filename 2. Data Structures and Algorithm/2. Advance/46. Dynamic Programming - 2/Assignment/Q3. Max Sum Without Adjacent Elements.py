@@ -52,7 +52,7 @@ after that use max subsequence program to find the ans.
 import sys
 sys.setrecursionlimit(10**5)
 
-def main():
+def maxSumWithOutAdjElements():
    A = [   
       [1, 2, 3, 4],
       [2, 3, 4, 5]    
@@ -92,5 +92,5 @@ def main():
    return #MaxSub(B,num-1)
 
 if __name__ == "__main__":
-   main()
+   maxSumWithOutAdjElements()
    
