@@ -51,13 +51,14 @@ Explanation 2:
 
 """
 
-def sumOfDigits(num:str,eIndex:int):
+
+def sumOfDigits(num: str, eIndex: int):
     if eIndex == 0:
         return int(num[eIndex])
-    
-    return sumOfDigits(num,eIndex-1)+int(num[eIndex])
+
+    return sumOfDigits(num, eIndex - 1) + int(num[eIndex])
 
 
 if __name__ == "__main__":
     num = 13
-    print(sumOfDigits(str(num),len(str(num))-1))
+    print(sumOfDigits(str(num), len(str(num)) - 1))
