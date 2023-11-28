@@ -66,29 +66,29 @@ A + B = [[1+9, 2+9, 3+7],
 
 
 def add_matrices(A, B):
-    lengthOfRow = len(A)
-    lengthOfColumn = len(A[0])
-    actualres = []
-    for i in range(lengthOfRow):
-        res = []
-        for j in range(lengthOfColumn):
-            sum = A[i][j] + B[i][j]
-            res.append(sum)
-        actualres.append(res)
+     lengthOfRow = len(A)
+     lengthOfColumn = len(A[0])
+     actualres = []
+     for i in range(lengthOfRow):
+          res = []
+          for j in range(lengthOfColumn):
+               sum = A[i][j] + B[i][j]
+               res.append(sum)
+          actualres.append(res)
 
-    return actualres
+     return actualres
 
 
 if __name__ == '__main__':
-    a = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9]
-    ]
+     a = [
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]
+     ]
 
-    b = [
-        [9, 8, 7],
-        [6, 5, 4],
-        [3, 2, 1]
-    ]
-    print(add_matrices(a, b))
+     b = [
+          [9, 8, 7],
+          [6, 5, 4],
+          [3, 2, 1]
+     ]
+     print(add_matrices(a, b))

@@ -65,39 +65,39 @@ Explanation 2:
 
 
 def rotate_matrix(arr):
-    # for anti clockwise
-    # idea here is first we have to transpose the matrix and then we have swap first row with last row.
-    # then second row
-    # with second last row and soo on.
+   # for anti clockwise
+   # idea here is first we have to transpose the matrix and then we have swap first row with last row.
+   # then second row
+   # with second last row and soo on.
 
-    # # To Transpose matrix
-    # n = len(A)
-    # for i in range(n):
-    #     for j in range(i):
-    #         A[i][j],A[j][i] = A[j][i],A[i][j]
+   # # To Transpose matrix
+   # n = len(A)
+   # for i in range(n):
+   #     for j in range(i):
+   #         A[i][j],A[j][i] = A[j][i],A[i][j]
 
-    # # To swap rows
+   # # To swap rows
 
-    # for i in range(n//2):
-    #     for j in range(n):
-    #         A[i][j],A[n-1-i][j] = A[n-1-i][j],A[i][j]
+   # for i in range(n//2):
+   #     for j in range(n):
+   #         A[i][j],A[n-1-i][j] = A[n-1-i][j],A[i][j]
 
-    # return A
+   # return A
 
-    n = len(arr)
-    for i in range(1, n):
-        for j in range(i):
-            arr[i][j], arr[j][i] = arr[j][i], arr[i][j]
-    for i in arr:
-        i.reverse()
-    return arr
+   n = len(arr)
+   for i in range(1, n):
+      for j in range(i):
+         arr[i][j], arr[j][i] = arr[j][i], arr[i][j]
+   for i in arr:
+      i.reverse()
+   return arr
 
 
 if __name__ == '__main__':
-    A = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9]
-    ]
+   A = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+   ]
 
-    print(rotate_matrix(A))
+   print(rotate_matrix(A))
