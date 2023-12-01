@@ -46,13 +46,14 @@ Explanation 2:
 
 """
 
-def bulbs( A):
+
+def bulbs(A):
+
     ans = 0
     state = 0
-
     for i in A:
         if i == state:
-            ans +=1
-            state = 1-state
+            ans += 1
+            state = 1 - state
 
     return ans

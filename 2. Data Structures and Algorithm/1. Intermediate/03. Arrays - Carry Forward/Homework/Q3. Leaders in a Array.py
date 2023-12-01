@@ -39,17 +39,19 @@ Explanation 2:
  So we will return these two elements i.e [5, 4], we can also any other ordering.
  
 """
+
+
 def leader(A):
     n = len(A)
-    i = n-1
+    i = n - 1
     ans = []
-    rightmost = A[n-1]
-    ans.append(A[n-1])
+    rightmost = A[n - 1]
+    ans.append(A[n - 1])
     while i > -1:
         if A[i] > rightmost:
             ans.append(A[i])
             rightmost = A[i]
 
-        i -=1
+        i -= 1
 
     return ans

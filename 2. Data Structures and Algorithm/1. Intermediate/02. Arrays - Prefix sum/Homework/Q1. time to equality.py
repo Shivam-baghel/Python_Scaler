@@ -14,16 +14,19 @@ Example Explanation
 We can change the array A = [4, 4, 4, 4, 4]. The time required will be 8 seconds.
 
 """
+
+
 def timeRequired(A):
     maxValue = -float('inf')
     for i in A:
         if maxValue < i:
-            maxValue =i 
+            maxValue = i
     count = 0
     for i in range(len(A)):
         count = count + (maxValue - A[i])
 
     return count
 
-a = tuple(map(int,input().split()))
+
+a = tuple(map(int, input().split()))
 print(timeRequired(a))

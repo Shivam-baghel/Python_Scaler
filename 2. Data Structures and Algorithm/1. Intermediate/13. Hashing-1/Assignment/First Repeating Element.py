@@ -32,20 +32,23 @@ Explanation 1:
 Explanation 2:
  There is no repeating element, output -1
 """
+
+
 def firstRepeatElement(A):
-    #create a frequency map
+    # create a frequency map
     freq = {}
-    for i in range (len(A)):
-        if A[i] in freq:
-            freq[A[i]] +=1
-        else:
-            freq[A[i]] =1
-    
     for i in range(len(A)):
-        if freq[A[i]] >1: # check if value greater than 1 directly return.
+        if A[i] in freq:
+            freq[A[i]] += 1
+        else:
+            freq[A[i]] = 1
+
+    for i in range(len(A)):
+        if freq[A[i]] > 1:  # check if value greater than 1 directly return.
             return A[i]
-    
+
     return -1
-    
+
+
 A = [10, 5, 3, 4, 3, 5, 6]
 print(firstRepeatElement(A))

@@ -26,31 +26,33 @@ There are 3 distinct numbers in the array which are 1,2,3.
 Out of these, only 2 and 3 occur twice. Therefore the answer is sum of 2 and 3 which is 5.
 """
 
+
 # @param A : integer
 # @param B : integer
 # @param C : list of integers
 # @return an integer
 def getSumOfKOccurences(B, C):
-    #first create a frequency map
+    # first create a frequency map
     freq = {}
     for i in range(len(C)):
         if C[i] in freq:
-            freq[C[i]] +=1
+            freq[C[i]] += 1
         else:
-            freq[C[i]] =1            
-    
-    # sum of keys whose value is equal to B
+            freq[C[i]] = 1
+
+            # sum of keys whose value is equal to B
     count = 0
     # for key,value in freq.items():
     #     if value == B:
     #         count +=key
     for key in freq:
-        if freq[key]==B:
-            count +=key
+        if freq[key] == B:
+            count += key
     return count
 
-N=5 
-B=2 
-C= [1,2,2,3,3]
 
-print(getSumOfKOccurences(B,C))
+N = 5
+B = 2
+C = [1, 2, 2, 3, 3]
+
+print(getSumOfKOccurences(B, C))

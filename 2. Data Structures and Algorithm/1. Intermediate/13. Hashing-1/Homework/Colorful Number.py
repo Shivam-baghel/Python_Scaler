@@ -47,12 +47,13 @@ Explanation 2:
  This number is not a COLORFUL number since the product sequence 23  and sequence 6 is same.
 """
 
+
 # @param A : integer
 # @return an integer
 def colorful(A):
     # hashset = set()
     # a = str(A)
-    
+
     # for i in range(len(a)):
     #     product =1 
     #     for j in range(i,len(a)):
@@ -61,25 +62,26 @@ def colorful(A):
     #             return 0
     #         else:
     #             hashset.add(product)
-    
+
     # return 1
 
     # or second way
     hashset = set()
     a = str(A)
-    
+
     for i in range(len(a)):
-        product =1 
-        for j in range(i,len(a)):
-            product = product* int(a[j])
+        product = 1
+        for j in range(i, len(a)):
+            product = product * int(a[j])
             hashset.add(product)
 
-    #Total no of sub array present in an array:
-    n = ((len(a)+1)*len(a))//2
-    if len(hashset)==n:
+    # Total no of sub array present in an array:
+    n = ((len(a) + 1) * len(a)) // 2
+    if len(hashset) == n:
         return 1
     else:
         return 0
 
-A=123
+
+A = 123
 print(colorful(A))

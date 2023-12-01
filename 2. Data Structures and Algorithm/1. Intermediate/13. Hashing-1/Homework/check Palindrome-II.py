@@ -33,29 +33,32 @@ Explanation 1:
 Explanation 2:
  Given string "abbaee" can be rearranged to "aebbea" to form a palindrome.
 """
+
+
 # @param A : string
 # @return an integer
 def checkPalindrome(A):
-    #Create a freq map of lowercase characters
+    # Create a freq map of lowercase characters
     freq = {}
     for i in A:
         if i in freq:
-            freq[i] +=1
+            freq[i] += 1
         else:
-            freq[i] =1
-    
+            freq[i] = 1
+
     countOfodd = 0
     for j in range(len(A)):
-        if freq[A[j]]%2==0:
+        if freq[A[j]] % 2 == 0:
             continue
         else:
-            countOfodd +=1
-            freq[A[j]] -=1
-    
-    if countOfodd>1:
+            countOfodd += 1
+            freq[A[j]] -= 1
+
+    if countOfodd > 1:
         return 0
     else:
         return 1
 
-A="yzfbzbyyrurquqf"
+
+A = "yzfbzbyyrurquqf"
 print(checkPalindrome(A))

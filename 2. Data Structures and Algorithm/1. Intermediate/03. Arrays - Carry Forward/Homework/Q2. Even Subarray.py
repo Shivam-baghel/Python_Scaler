@@ -43,7 +43,8 @@ Explanation 2:
 
 """
 
+
 def EvenSub(A):
-    if len(A)%2!=0 or A[0]%2!=0 or A[len(A)-1]%2!=0 :
+    if len(A) % 2 != 0 or A[0] % 2 != 0 or A[len(A) - 1] % 2 != 0:
         return 'NO'
     return 'YES'

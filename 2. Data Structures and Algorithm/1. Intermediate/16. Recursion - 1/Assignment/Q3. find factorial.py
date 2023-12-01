@@ -29,7 +29,6 @@ Output 2:
 
  1
 
-
 Example Explanation
 Explanation 1:
 
@@ -40,12 +39,13 @@ Explanation 2:
 
 """
 
+
 def factorial(number):
-    
     if number == 1:
         return 1
-    
-    return factorial(number-1)*number
+
+    return factorial(number - 1) * number
+
 
 if __name__ == "__main__":
     num = 4

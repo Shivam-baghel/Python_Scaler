@@ -44,25 +44,24 @@ Explanation 2:
  "strings" is not a palindrome, so return 0.
 """
 
-def chkPalindrome(string:str,sIndex:int,eIndex:int):
-    
+
+def chkPalindrome(string: str, sIndex: int, eIndex: int):
     if sIndex >= eIndex:
         return 1
-    
+
     if string[sIndex] == string[eIndex]:
-        return chkPalindrome(string,sIndex+1,eIndex-1)
-    
+        return chkPalindrome(string, sIndex + 1, eIndex - 1)
+
     return 0
 
-def palindrome(string:str):
-    end = len(string)-1
-    start = 0
-    
-    return chkPalindrome(string,start,end)
 
+def palindrome(string: str):
+    end = len(string) - 1
+    start = 0
+
+    return chkPalindrome(string, start, end)
 
 
 if __name__ == '__main__':
     a = 'naman'
     print(palindrome(a))
-    

@@ -1,41 +1,23 @@
 """ 
 Q2. Find Fibonacci - II
-Solved
-feature icon
-Get your doubts resolved blazing fast with Chat GPT Help
-Check Chat GPT
-feature icon
-Using hints is now penalty free
-Use Hint
-Problem Description
-The Fibonacci numbers are the numbers in the following integer sequence.
 
+The Fibonacci numbers are the numbers in the following integer sequence.
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ……..
 
 In mathematical terms, the sequence Fn of Fibonacci numbers is defined by the recurrence relation:
-
 Fn = Fn-1 + Fn-2
 
 Given a number A, find and return the Ath Fibonacci Number using recursion.
-
 Given that F0 = 0 and F1 = 1.
-
-
 
 Problem Constraints
 0 <= A <= 20
 
-
-
 Input Format
 First and only argument is an integer A.
 
-
-
 Output Format
 Return an integer denoting the Ath term of the sequence.
-
-
 
 Example Input
 Input 1:
@@ -54,7 +36,6 @@ Output 2:
 
  34
 
-
 Example Explanation
 Explanation 1:
 
@@ -64,16 +45,17 @@ Explanation 2:
  f(9) = f(8) + f(7) = 21 + 13  = 34
 """
 
-def fib(number:int):
+
+def fib(number: int):
     if number == 0:
         return 0
-    
+
     if number == 1:
         return 1
-    
-    return fib(number-1)+fib(number-2)
+
+    return fib(number - 1) + fib(number - 2)
+
 
 if __name__ == "__main__":
     num = 39
     print(fib(num))
-

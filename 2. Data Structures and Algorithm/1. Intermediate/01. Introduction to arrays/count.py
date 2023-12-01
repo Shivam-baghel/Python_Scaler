@@ -14,16 +14,17 @@ from cmath import inf
 def solve(a):
     maxVal = -float('inf')
     for i in range(len(a)):
-        if maxVal < a[i] :
+        if maxVal < a[i]:
             maxVal = a[i]
 
     count = 0
 
     for i in range(len(a)):
-        if a[i] != maxVal :
+        if a[i] != maxVal:
             count += 1
 
     return count
 
-a =[-3,-2,1,4,3,8,5,8]
+
+a = [-3, -2, 1, 4, 3, 8, 5, 8]
 print(solve(a))
