@@ -26,7 +26,31 @@ def max_subarray(arr: list, k: int):
     return result
 
 
+# Optamised carry forword or sliding window approach
+def max_subarray2(arr: list, k: int):
+    n = len(arr)
+    sum_of_arr = 0
+    for i in range(0, k):
+        sum_of_arr += arr[i]
+
+    result = sum_of_arr
+    start = 1
+    end = k
+
+    while end < n:
+        sum_of_arr += arr[end] - arr[start - 1]
+
+        if sum_of_arr > result:
+            result = sum_of_arr
+
+        start += 1
+        end += 1
+
+    return result
+
+
 if __name__ == '__main__':
     a = [1, 2, 3, 5, 6, 8]
-    k = 1
+    k = 2
     print(max_subarray(a, k))
+    print(max_subarray2(a,k))
