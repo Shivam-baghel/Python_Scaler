@@ -33,22 +33,25 @@ Therefore the minimum possible distance is 3.
 Explanation 2:
 Only possibility is choosing A[1] and A[2].
 """
+
+
 def shaggyAndDistances(A):
-    #create a hashmap with value -1 to each key
+    # create a hashmap with value -1 to each key
     hashmap = {}
     for i in A:
-        hashmap[i]=-1 #this represents elements as never seen before
+        hashmap[i] = -1  # this represents elements as never seen before
     res = float('inf')
     for j in range(len(A)):
         if hashmap[A[j]] != -1:
-            res = min(res,j-hashmap[A[j]])
-        
+            res = min(res, j - hashmap[A[j]])
+
         hashmap[A[j]] = j
-    
+
     if res == float('inf'):
         return -1
     else:
         return res
+
 
 A = [7, 1, 3, 4, 1, 7]
 print(shaggyAndDistances(A))

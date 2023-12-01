@@ -39,6 +39,7 @@ Explanation 2:
 
 """
 
+
 def uniqueXORPairs(A, B):
     """This function will return the count of unique xor pairs whose xor is equal to the given value.
 
@@ -58,12 +59,12 @@ def uniqueXORPairs(A, B):
     The idea is based on the fact that A[i] ^ A[j] is equal to B if and only if A[i] ^ B is equal to A[j].
     """
     # checking for every pair:
-        #Initialize the result as 0.
-        # Create an empty hash set “s”.
-        # Do the following for each element A[i] in A[]
-        # If B ^ A[i] is in “s”, then increment the result by 1.
-        # Insert A[i] into the hash set “s”.
-        # Return result.
+    # Initialize the result as 0.
+    # Create an empty hash set “s”.
+    # Do the following for each element A[i] in A[]
+    # If B ^ A[i] is in “s”, then increment the result by 1.
+    # Insert A[i] into the hash set “s”.
+    # Return result.
 
     # creating a dictionary or a hashmap.
     present = dict()
@@ -72,15 +73,16 @@ def uniqueXORPairs(A, B):
     count = 0
 
     for i in range(len(A)):
-        val = B^A[i]
+        val = B ^ A[i]
         if val in present:
-            count +=1
+            count += 1
         else:
-            present[A[i]] = i 
-    
+            present[A[i]] = i
+
     return count
+
 
 A = [5, 4, 10, 15, 7, 6]
 B = 5
 
-print(uniqueXORPairs(A,B))
+print(uniqueXORPairs(A, B))

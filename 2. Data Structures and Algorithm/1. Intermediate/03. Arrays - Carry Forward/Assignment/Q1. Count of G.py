@@ -39,19 +39,18 @@ Explanation 2:
 import math
 
 
-def countOfAGPair(arr:list):
-    modulo = int(math.pow(10,9)) + 7
+def countOfAGPair(arr: list):
+    modulo = int(math.pow(10, 9)) + 7
     countOfg = 0
     ans = 0
-    
-    for i in range(len(arr)-1,-1,-1):
+
+    for i in range(len(arr) - 1, -1, -1):
         if arr[i] == 'G':
             countOfg += 1
         elif arr[i] == 'A':
             ans += countOfg
-    
-    
-    return ans%modulo
+
+    return ans % modulo
 
 
 a = "ABCGAG"

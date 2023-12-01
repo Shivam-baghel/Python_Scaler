@@ -44,6 +44,7 @@ Explanation 2:
 
 """
 
+
 def isItDictionary(A, B):
     """This function is used to check for lexigraphic words.
 
@@ -54,24 +55,23 @@ def isItDictionary(A, B):
     Returns:
         _type_: _description_
     """
-    
-    
-    dictV={}
-    for i,n in enumerate(B):
-        dictV[B[i]]=i
-    for i in range(1,len(A)):
-        word1=A[i-1]
-        word2=A[i]
-        i=0
-        greater=False
-        while((i<len(word1)) and (i<len(word2))):
-            if dictV[word1[i]]>dictV[word2[i]]:
+
+    dictV = {}
+    for i, n in enumerate(B):
+        dictV[B[i]] = i
+    for i in range(1, len(A)):
+        word1 = A[i - 1]
+        word2 = A[i]
+        i = 0
+        greater = False
+        while (i < len(word1)) and (i < len(word2)):
+            if dictV[word1[i]] > dictV[word2[i]]:
                 return 0
-            elif dictV[word1[i]]==dictV[word2[i]]:
-                i+=1
+            elif dictV[word1[i]] == dictV[word2[i]]:
+                i += 1
             else:
-                greater=True
+                greater = True
                 break
-        if not greater and len(word1)>len(word2):
+        if not greater and len(word1) > len(word2):
             return 0
     return 1

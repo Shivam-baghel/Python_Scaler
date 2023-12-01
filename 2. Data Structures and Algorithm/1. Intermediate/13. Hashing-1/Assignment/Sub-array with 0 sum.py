@@ -32,19 +32,21 @@ Explanation 2:
  The array has sum 0.
 """
 
+
 def subArrayWithZeroSum(A):
-    prefixSum = [0]*len(A)
-    hs = set()     #this hashSet declaration
+    prefixSum = [0] * len(A)
+    hs = set()  # this hashSet declaration
     prefixSum[0] = A[0]
     hs.add(prefixSum[0])
-    for i in range(1,len(A)):
-        prefixSum[i] = prefixSum[i-1] + A[i]
+    for i in range(1, len(A)):
+        prefixSum[i] = prefixSum[i - 1] + A[i]
         hs.add(prefixSum[i])
-    
-    if len(hs)<len(A) or (0 in hs):
+
+    if len(hs) < len(A) or (0 in hs):
         return 1
     else:
         return 0
+
 
 A = [1, 2, 3, 4, 5]
 print(subArrayWithZeroSum(A))

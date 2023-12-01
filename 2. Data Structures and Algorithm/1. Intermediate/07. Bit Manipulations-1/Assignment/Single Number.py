@@ -30,12 +30,16 @@ Explanation 2:
  1 occurs once.
 
 """
-def singleNumber(arr:tuple):
+
+
+def singleNumber(arr: tuple):
     lengthOftuple = len(arr)
     ans = 0
     for i in range(lengthOftuple):
-        ans = ans^arr[i]        # we have used the property of xor.if we have xor of two same no. it will give 0 and if there is only 1 different no. that no xor 0 will always give that no.
+        ans = ans ^ arr[
+            i]  # we have used the property of xor.if we have xor of two same no. it will give 0 and if there is only 1 different no. that no xor 0 will always give that no.
     return ans
 
-A_tuple = tuple(map(int,input().split()))
+
+A_tuple = tuple(map(int, input().split()))
 print(singleNumber(A_tuple))

@@ -1,7 +1,7 @@
 """
 Given an array of size N, print  the sum of every single subarray.
 """
-from sum_of_elements_in_an_subarray import addSubArray
+
 
 # Brute force method.
 
@@ -16,10 +16,11 @@ from sum_of_elements_in_an_subarray import addSubArray
 def sumOfAllSubArray(arr):
     for i in range(len(arr)):
         sumOfElements = 0
-        for j in range(i,len(arr)):
+        for j in range(i, len(arr)):
             sumOfElements = sumOfElements + arr[j]
             print(sumOfElements)
 
-arr = tuple(map(int,input().split()))
+
+arr = tuple(map(int, input().split()))
 
 sumOfAllSubArray(arr)

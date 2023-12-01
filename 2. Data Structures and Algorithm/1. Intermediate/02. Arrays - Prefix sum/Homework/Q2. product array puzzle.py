@@ -1,5 +1,4 @@
-
-""" 
+"""
 Q2. Product array puzzle
 Given an array of integers A, find and return the product array of the same size where the ith element of the product array will be equal to the product of all the elements divided by the ith element of the array.
 Note: It is always possible to form the product array with integer (32 bit) values. Solve it without using the division operator.
@@ -26,18 +25,20 @@ Output 2:
     
 """
 
+
 # @param A : list of integers
 # @return a list of integers
 def productArrayPuzzle(A):
     product = 1
     for i in range(len(A)):
-        product = product*A[i]
+        product = product * A[i]
     res = []
     # res.append(product)
     for i in range(len(A)):
-        res.append(product//A[i])
-    
+        res.append(product // A[i])
+
     return res
+
 
 A = [1, 2, 3, 4, 5]
 print(productArrayPuzzle(A))

@@ -37,6 +37,7 @@ Explantion 2:
  Elements (2, 10) appears in both the array.
 """
 
+
 def commonElements(A, B):
     """this function returns the common elements between two integer arrays.
 
@@ -58,24 +59,25 @@ def commonElements(A, B):
     #         B.remove(A[i])
     #         res.append(A[i])
 
-    #2nd idea
+    # 2nd idea
     dictionary = {}
     res = []
     n1 = len(A)
     n2 = len(B)
-    
+
     for i in range(n2):
         if B[i] in dictionary:
-            dictionary[B[i]] +=1
+            dictionary[B[i]] += 1
         else:
-            dictionary[B[i]] =1
-    
+            dictionary[B[i]] = 1
+
     for i in range(n1):
-        if A[i] in dictionary and dictionary[A[i]]>0:
+        if A[i] in dictionary and dictionary[A[i]] > 0:
             res.append(A[i])
-            dictionary[A[i]] -=1
+            dictionary[A[i]] -= 1
     return res
+
 
 A = [1, 2, 2, 1]
 B = [2, 3, 1, 2]
-print(commonElements(A,B))
+print(commonElements(A, B))

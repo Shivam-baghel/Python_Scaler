@@ -42,19 +42,20 @@ There are 36 good subarrays
 
 """
 
-def GoodSubarray(A,B):
-    n=len(A)
-    cnt=0
+
+def GoodSubarray(A, B):
+    n = len(A)
+    cnt = 0
     for i in range(n):
-        s=0
-        l=0
-        for j in range(i,n):
-            s+=A[j]
-            l+=1
-            if l%2==0:
-                if s<B:
-                    cnt+=1
+        s = 0
+        l = 0
+        for j in range(i, n):
+            s += A[j]
+            l += 1
+            if l % 2 == 0:
+                if s < B:
+                    cnt += 1
             else:
-                if s>B:
-                    cnt+=1
+                if s > B:
+                    cnt += 1
     return cnt
