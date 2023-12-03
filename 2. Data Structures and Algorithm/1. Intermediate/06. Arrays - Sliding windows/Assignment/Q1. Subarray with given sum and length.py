@@ -41,3 +41,38 @@ The subarray [3, 2, 6] is of length 3 and sum 11.
 Explanation 2:
 There are no such subarray.
 """
+
+
+def subarray_with_sum_and_length(A, B, C):
+    arr = A
+    length = B
+    sum_till = C
+
+    sum_of_len = 0
+    len_of_arr = len(arr)
+    for i in range(length):
+        sum_of_len += arr[i]
+
+    result = [sum_of_len]
+
+    start = 1
+    end = length
+    while end < len_of_arr:
+        sum_of_len += arr[end] - arr[start - 1]
+
+        result.append(sum_of_len)
+        start += 1
+        end += 1
+
+    for j in result:
+        if j == sum_till:
+            return 1
+
+    return 0
+
+
+if __name__ == '__main__':
+    A = [4, 3, 2, 6, 1]
+    B = 3
+    C = 11
+    print(subarray_with_sum_and_length(A, B, C))

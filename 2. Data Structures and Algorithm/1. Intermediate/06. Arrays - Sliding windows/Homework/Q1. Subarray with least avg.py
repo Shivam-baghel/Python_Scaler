@@ -43,3 +43,24 @@ Explanation 2:
 
  Subarray between [4, 5] has minimum average
 """
+
+
+def subarray_least_avg(A: list, B: int):
+    res = 0
+    summ = 0
+    for i in range(B):
+        summ += A[i]
+    n = len(A)
+    min_sum = summ
+    for i in range(B, n):
+        summ += A[i] - A[i - B]
+        if summ < min_sum:
+            min_sum = summ
+            res = i - B + 1
+    return res
+
+
+if __name__ == '__main__':
+    A = [3, 7, 90, 20, 10, 50, 40]
+    B = 3
+    print(subarray_least_avg(A, B))
