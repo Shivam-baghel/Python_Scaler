@@ -44,7 +44,8 @@ The submatrix
 has the highest sub matrix sum 30.
 """
 
-def solve( A):
+
+def max_submatrix_sum(A):
     rows = len(A)
     cols = len(A[0])
 
@@ -54,22 +55,21 @@ def solve( A):
         for i in range(len(arr)):
             cur_sum += arr[i]
 
-            max_sum = max(max_sum,cur_sum)
-            
+            max_sum = max(max_sum, cur_sum)
+
             if cur_sum < 0:
                 cur_sum = 0
 
         return max_sum
-            
-    ans = float('-inf')  
+
+    ans = float('-inf')
     for k in range(cols):
         arr = [0] * rows
-        for j in range(k,cols):
+        for j in range(k, cols):
             for i in range(rows):
                 arr[i] = A[i][j] + arr[i]
 
             cur_sum = kadane(arr)
-            ans = max(ans,cur_sum)
-
+            ans = max(ans, cur_sum)
 
     return ans

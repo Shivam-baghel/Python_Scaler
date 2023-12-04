@@ -81,25 +81,25 @@ Explanation 2:
 """
 
 
-def solve(self, A, B, C, D, E):
-    for i in range(0,len(A)):
-        for j in range(1,len(A[0])):
-            A[i][j]+= A[i][j-1]
-    for i in range(0,len(A[0])):
-        for j in range(1,len(A)):
-            A[j][i]+=A[j-1][i]
-    mylist = []        
-    for i in range(0,len(B)):
-        x1 = B[i]-1
-        y1 = C[i]-1
-        x2 = D[i]-1
-        y2 = E[i]-1
-        sumFinal = A[x2][y2]
+def submatrix_sum(A, B, C, D, E):
+    for i in range(0, len(A)):
+        for j in range(1, len(A[0])):
+            A[i][j] += A[i][j - 1]
+    for i in range(0, len(A[0])):
+        for j in range(1, len(A)):
+            A[j][i] += A[j - 1][i]
+    mylist = []
+    for i in range(0, len(B)):
+        x1 = B[i] - 1
+        y1 = C[i] - 1
+        x2 = D[i] - 1
+        y2 = E[i] - 1
+        sum_final = A[x2][y2]
         if y1 > 0:
-            sumFinal-=A[x2][y1-1]
+            sum_final -= A[x2][y1 - 1]
         if x1 > 0:
-                sumFinal-=A[x1-1][y2]
+            sum_final -= A[x1 - 1][y2]
         if x1 > 0 and y1 > 0:
-            sumFinal+=A[x1-1][y1-1]
-        mylist.append(sumFinal % (10**9 + 7))  
-    return mylist  
+            sum_final += A[x1 - 1][y1 - 1]
+        mylist.append(sum_final % (10 ** 9 + 7))
+    return mylist
