@@ -59,8 +59,8 @@ def kth_symbol(number: int, position: int) -> int:
 
 
 if __name__ == "__main__":
-    n = 2
-    k = 2
+    n = 4
+    k = 5
     print(kth_symbol(n, k))
 
 '''

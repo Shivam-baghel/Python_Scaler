@@ -58,20 +58,20 @@ def searchInSortedMat(A, B):
     i = 0
     n = len(A)
     m = len(A[0])
-    j = m-1
-    res  = n*1009+m
+    j = m - 1
+    res = n * 1009 + m
     flag = False
 
-    while (i<n and  j>= 0):
+    while i < n and j >= 0:
         if A[i][j] < B:
-            i +=1
+            i += 1
         elif A[i][j] > B:
-            j -=1
+            j -= 1
         else:
             flag = True
-            res = min(res,((i+1)*1009)+(j+1))
-            j -=1
-            
+            res = min(res, ((i + 1) * 1009) + (j + 1))
+            j -= 1
+
     if flag:
         return res
     else:
