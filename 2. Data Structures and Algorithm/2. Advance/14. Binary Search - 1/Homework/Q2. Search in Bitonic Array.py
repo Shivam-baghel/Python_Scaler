@@ -93,4 +93,6 @@ def SearchInBitonic(arr,B):
     return -1
 
 A = [3, 9, 10, 20, 17, 5, 1]
+B = 10
 print(bitonic(A,0,len(A)-1))
+print(SearchInBitonic(A,B))
