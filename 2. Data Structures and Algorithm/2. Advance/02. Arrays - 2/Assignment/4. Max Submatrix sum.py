@@ -44,39 +44,40 @@ The largest submatrix with max sum is
 The sum is 45.
 """
 
-def maxSubmatrixSum( A):
-    def prefix_matrix(A):
-                n = len(A)
-                m = len(A[0])
 
-                for i in range(n):
-                    for j in range(1,m):
-                        A[i][j] = A[i][j-1] + A[i][j]
-            
-                for i in range(1,n):
-                    for j in range(m):
-                        A[i][j] = A[i-1][j] + A[i][j]
-                return A
-    
+def maxSubmatrixSum(A):
+    def prefix_matrix(A):
+        n = len(A)
+        m = len(A[0])
+
+        for i in range(n):
+            for j in range(1, m):
+                A[i][j] = A[i][j - 1] + A[i][j]
+
+        for i in range(1, n):
+            for j in range(m):
+                A[i][j] = A[i - 1][j] + A[i][j]
+        return A
+
     A = prefix_matrix(A)
     # print(A)
 
-    brr = len(A)-1
-    brc = len(A[0])-1
+    brr = len(A) - 1
+    brc = len(A[0]) - 1
     maxsum = A[brr][brc]
 
     for tlr in range(brr + 1):
         for tlc in range(brc + 1):
-            sum = 0
+            summ = 0
             if tlr <= 0 and tlc <= 0:
-                sum = A[brr][brc]
+                summ = A[brr][brc]
             elif tlr <= 0 and tlc > 0:
-                sum = A[brr][brc] - A[brr][tlc-1]
+                summ = A[brr][brc] - A[brr][tlc - 1]
             elif tlr > 0 and tlc <= 0:
-                sum = A[brr][brc] - A[tlr-1][brc]
+                summ = A[brr][brc] - A[tlr - 1][brc]
             else:
-                sum = A[brr][brc] - A[brr][tlc-1] - A[tlr-1][brc] + A[tlr-1][tlc-1]
+                summ = A[brr][brc] - A[brr][tlc - 1] - A[tlr - 1][brc] + A[tlr - 1][tlc - 1]
 
-            maxsum = max(maxsum,sum)
+            maxsum = max(maxsum, summ)
         # print(maxsum)
     return maxsum

@@ -24,15 +24,18 @@ Explanation 1:
 Explanation 2:
     he subarray [4,-1,2,1] has the maximum possible sum of 6.
 """
-def maxSubArray(A:tuple):
+
+
+def maxSubArray(A: tuple):
     largestSum = 0
     for i in range(len(A)):
         sumofElements = 0
-        for j in range(i,len(A)):
+        for j in range(i, len(A)):
             sumofElements = sumofElements + A[j]
-            largestSum = max(largestSum,sumofElements)
-    
+            largestSum = max(largestSum, sumofElements)
+
     print(largestSum)
 
-arr = tuple(map(int,input().split()))
+
+arr = tuple(map(int, input().split()))
 maxSubArray(arr)

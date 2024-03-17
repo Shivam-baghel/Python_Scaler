@@ -37,9 +37,10 @@ Explanation 2:
  Subarray between [4, 5] has minimum average
 """
 
+
 def leastAvg(A, B):
     # Using sliding window technique.
-    
+
     # set leastAvg to max
     leastAvg = float('inf')
     # length of array
@@ -48,26 +49,27 @@ def leastAvg(A, B):
     sumof = 0
     # avg of subarray
     avg = 0
-    
+
     # getting sum for subarray window of B
     for i in range(B):
-        sumof+=A[i]
+        sumof += A[i]
 
-    avg = sumof/B
+    avg = sumof / B
     # getting leastavg
-    leastAvg = min(leastAvg,avg)
+    leastAvg = min(leastAvg, avg)
     # setting avg
     index = 0
-    
-    for j in range(B,n):
-        sumof = sumof+A[j]-A[j-B]
-        avg = sumof/B
+
+    for j in range(B, n):
+        sumof = sumof + A[j] - A[j - B]
+        avg = sumof / B
         if avg < leastAvg:
             leastAvg = avg
-            index = j-B+1
+            index = j - B + 1
 
     return index
 
-A = [ 20, 1, 5, 2, 7, 5, 17 ]
+
+A = [20, 1, 5, 2, 7, 5, 17]
 B = 6
-print(leastAvg(A,B))
+print(leastAvg(A, B))

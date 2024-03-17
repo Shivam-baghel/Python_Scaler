@@ -14,35 +14,35 @@ to get the sum from prefix array from index [i,j]
 
 """
 
+
 def sumOfElements(A, startIndex, lastIndex):
+    sumOfElements = 0  # this variable will store sum of elements.
 
-    sumOfElements = 0       # this variable will store sum of elements.
+    if startIndex > 0:  # we are using prefix sum formula.
 
-    if startIndex > 0:     # we are using prefix sum formula.
+        sumOfElements = A[lastIndex] - A[startIndex - 1]
 
-        sumOfElements = A[lastIndex] - A[startIndex-1]       
- 
     else:
 
         sumOfElements = A[lastIndex]
 
-    print(sumOfElements)    # Printing the sum.
+    print(sumOfElements)  # Printing the sum.
 
-arr = tuple(map(int,input().split()))       # Accepting the array
 
-prefixArray =[0]*len(arr)       #creating the prefix array.
+arr = tuple(map(int, input().split()))  # Accepting the array
+
+prefixArray = [0] * len(arr)  # creating the prefix array.
 prefixArray[0] = arr[0]
-for i in range(1,len(arr)):
-    prefixArray[i] = prefixArray[i-1] + arr[i]
+for i in range(1, len(arr)):
+    prefixArray[i] = prefixArray[i - 1] + arr[i]
 
-queries = int(input())      # accepting the no. of queries
+queries = int(input())  # accepting the no. of queries
 
-while queries > 0 :
-    queries -= 1        # decreasing the queries count otherwise loop will go for infinte.
+while queries > 0:
+    queries -= 1  # decreasing the queries count otherwise loop will go for infinte.
 
-    startIndex,lastIndex = map(int,input().split())         # accepting the start and end Index queries.
+    startIndex, lastIndex = map(int, input().split())  # accepting the start and end Index queries.
     sumOfElements(prefixArray, startIndex, lastIndex)
-
 
 """
 The time complexity of this program would be O(2n) bcause of the 2 loops

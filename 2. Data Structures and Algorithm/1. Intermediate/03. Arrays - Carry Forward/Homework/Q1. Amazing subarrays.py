@@ -34,14 +34,15 @@ Explanation
 
 """
 
-def AmazingSubarrays( A):
+
+def AmazingSubarrays(A):
     a = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
     count = 0
     for i in range(len(A)):
         # for j in range(i,len(A)):
         if A[i] in a:
-            count += len(A)-i
-        else: 
+            count += len(A) - i
+        else:
             continue
-    
+
     return count % 10003

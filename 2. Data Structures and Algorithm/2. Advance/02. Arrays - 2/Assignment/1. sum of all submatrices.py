@@ -41,12 +41,13 @@ Total sum = 40
 
 """
 
-def solve( A):
-      n = len(A)
-      sum = 0
-      for i in range(n):
-            for j in range(n):
-                  top_left = (i + 1) * (j + 1)
-                  bottom_right = (n - i) * (n - j)
-                  sum += top_left*bottom_right*A[i][j]
-      return sum 
+
+def sum_of_submatrices(A):
+    n = len(A)
+    summ = 0
+    for i in range(n):
+        for j in range(n):
+            top_left = (i + 1) * (j + 1)
+            bottom_right = (n - i) * (n - j)
+            summ += top_left * bottom_right * A[i][j]
+    return summ

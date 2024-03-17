@@ -39,19 +39,20 @@ Explanation 2:
  Each index in the array acts as the center of alternating sequences of lengths 1.
 """
 
-def AlternatingSubarray(A,B):
+
+def AlternatingSubarray(A, B):
     # find the length of the subarray.
-    length = 2*B + 1
+    length = 2 * B + 1
     # create a ans array
     ans = []
     # find the length of the given array
     n = len(A)
-    
+
     # here we are going till n-length+1 is because only particular no of subarray can fit inside the array.
-    for i in range(n-length+1):
+    for i in range(n - length + 1):
         prev = -1
         flag = 1
-        for j in range(i,i+length):
+        for j in range(i, i + length):
             # checking if the current element is equal to previous element value
             # if yes then this subarray is not an alternating subarray so break 
             if A[j] == prev:
@@ -61,10 +62,11 @@ def AlternatingSubarray(A,B):
             prev = A[j]
         # getting the center index of subarray and pushing it in the ans.
         if flag == 1:
-            ans.append(i+B)
-    
+            ans.append(i + B)
+
     return ans
+
 
 A = [1, 0, 1, 0, 1]
 B = 1
-print(AlternatingSubarray(A,B))
+print(AlternatingSubarray(A, B))
