@@ -12,7 +12,14 @@ To run the Django Project:
 
 	go to the location of the manage.py file in cmd of the current project :
 		python manage.py runserver
-	
+
+To create you migration Schemas to migrate it afterwards:
+
+	run the below command in the location your manage.py file is present :
+		python manage.py makemigration {appname}
+		ex: python manage.py makemigration djangoProject
+
+
 To migrate all your Table Schemas in your DB:
 
 	run the below command in the location you manage.py file is present: 
@@ -33,3 +40,8 @@ To create a superuser to log in your default admin panel provided by django give
 				Email address: test@gmail.com
 				Password:admin
 				Password (again):admin
+
+To create app inside the django project :
+
+		run the below command in the location you manage.py file is present: 
+		python manage.py startapp appname
