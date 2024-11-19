@@ -39,17 +39,19 @@ Example Explanation
 
 Explanation 1:
  
- check image.png for better understanding
+ check Example 1 image.png for better understanding
  Color required = 3
 Explanation 2:
  
+ check Example 2 image.png for better understanding
  Color required = 2
 """
 
-def cyclicGraph( A):
+
+def cyclicGraph(A):
     if A == 0:
         return 0
-    elif A%2 == 0:
+    elif A % 2 == 0:
         return 2
     else:
         return 3
