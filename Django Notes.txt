@@ -1,3 +1,7 @@
+NOTE: for RestAPI's use Django Ninja instead of DRF that I installed earlier.
+Both Django REST Framework and Django Ninja are excellent for building APIs. DRF is mature and feature-rich, while Django Ninja offers modern simplicity and performance. Choose based on your project needs and preferences. Happy coding!
+
+	for more check out : https://medium.com/@StartXLabs/django-rest-framework-vs-django-ninja-choosing-the-right-framework-for-your-api-377bc925dcb6
 
 To create a Django Project :
 
