@@ -12,7 +12,21 @@ To run the Django Project:
 
 	go to the location of the manage.py file in cmd of the current project :
 		python manage.py runserver
+	to run the project on a particular port :
+		python manage.py runserver <port no>
+		Ex : python manage.py runserver 4000
+	
+	To go to the particular location in command or terminal :
+		type "cd" with a space, followed by the name of the directory, or drag and drop the directory into CMD from File Explorer. Press "Enter."
+		Ex : cd <foldername> or cd < entire location >
 
+		Type "cd.." and press "Enter" to go back one directory.
+
+To Stop the Django server:
+	press ctrl+Break button to Stop
+
+	for windows try : ctrl+c few times
+	
 To create you migration Schemas to migrate it afterwards:
 
 	run the below command in the location your manage.py file is present :
