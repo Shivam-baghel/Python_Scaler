@@ -5,3 +5,77 @@ ex: {"fullName": "Shivam Baghel"} this is request body.
 class user(model.Model):
     firstName = model.Charfield()
     lastName = model.charfield()
+
+Solution given by Gemini : 
+
+Explanation:
+
+Model:
+
+Create a model with multiple fields.
+Override the save() method in the model.
+Inside save(), check if field1 has a value.
+If field1 has a value, perform the necessary logic to populate field2 and field3.
+Call super().save() to save the instance.
+Serializer:
+
+Create a serializer for the model.
+Include all fields in the fields attribute.
+View:
+
+Create an APIView to handle POST requests.
+Deserialize the request data using the serializer.
+If the data is valid, save the instance and return the serialized data.
+If the data is invalid, return the serializer errors.
+Example Usage:
+
+If you send a POST request with the following data:
+
+JSON
+
+{
+    "field1": "hello_world"
+}
+The resulting MyModel instance will have:
+
+Python
+
+field1 = "hello_world"
+field2 = "HELLO_WORLD"
+field3 = "hello"
+This approach allows you to perform custom logic within the model's save() method to populate related fields based on the value of a single input field.
+
+Key Considerations:
+
+Adjust the logic within the save() method to match your specific requirements for populating the other fields.
+Consider using signals or other mechanisms for more complex logic or when you need to update multiple related models.
+Ensure that the logic within save() is efficient and does not introduce any unexpected side effects.
+I hope this helps!
+
+Python
+
+from django.db import models
+
+class MyModel(models.Model):
+    field1 = models.CharField(max_length=255) 
+
+    def save(self, *args, **kwargs):
+        if self.field1:
+            # Process field1 and populate other fields
+            self.field2 = self.field1.upper()  # Example: Convert to uppercase
+            self.field3 = self.field1.split('_')[0]  # Example: Extract first part before underscore
+        super().save(*args, **kwargs)
+
+    field2 = models.CharField(max_length=255, blank=True)
+    field3 = models.CharField(max_length=255, blank=True) 
+Key Changes:
+
+Field Order: Moved field2 and field3 below the save() method. This ensures that these fields are created after the save() method has a chance to populate them based on field1.
+This refined approach will effectively accept a single field (field1) in your request, process it within the save() method, and populate the other fields (field2, field3) accordingly.
+
+Remember to adjust the processing logic within the save() method based on your specific requirements. This example demonstrates basic transformations (uppercase and splitting), but you can implement more complex logic as needed.
+
+I hope this revised solution addresses the issue you encountered!
+
+
+Not yet tried
