@@ -1,0 +1,7 @@
+Q1. how to accept one field and convert it and store it in multiple model fields ?
+
+ex: {"fullName": "Shivam Baghel"} this is request body.
+
+class user(model.Model):
+    firstName = model.Charfield()
+    lastName = model.charfield()
