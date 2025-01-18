@@ -1,0 +1,19 @@
+this is a check list to check if every question has been copied from scaler for advance module.
+
+graph - done
+dynamic programming - remains
+backtracking - done
+greedy - remains
+heaps - remains
+tries - remains
+trees - remains
+stacks and queues - remains
+linked list - remains
+hashing - remains
+recursion - done
+arrays - done
+math - remains
+bit manipulation - remains
+sorting - remains
+binary search - done
+two pointer - done

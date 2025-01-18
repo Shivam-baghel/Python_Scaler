@@ -62,3 +62,46 @@ Explanation 2:
 
 Median is 17.
 """
+
+
+# search range is smallest value to larger value in matrix, since the matrix is sorted it would be easy to find.
+def getSearchSpace(matrix):
+    minVal = float("inf")
+    maxVal = float("-inf")
+    for row in matrix:
+        if minVal > row[0]:
+            minVal = row[0]
+        if maxVal < row[-1]:
+            maxVal = row[-1]
+    return minVal, maxVal
+
+
+# In each row we need to find number count which is lesser than the mid value
+def countSmallerThanEqualToMid(row, mid):
+    l, r = 0, len(row) - 1
+
+    while l <= r:
+        m = (l + r) >> 1
+        if row[m] <= mid:
+            l = m + 1
+        else:
+            r = m - 1
+    return l
+
+
+def findMedian(A):
+    row, col = len(A), len(A[0])
+    left, right = getSearchSpace(A)
+
+    while left <= right:
+        count = 0
+        mid = (left + right) >> 1 # type: ignore
+        for i in range(row):
+            count += countSmallerThanEqualToMid(A[i], mid)
+        # since we know the median will be present at center, hence half the size of matrix will be the position.
+        if count <= (row * col) // 2:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    return left
