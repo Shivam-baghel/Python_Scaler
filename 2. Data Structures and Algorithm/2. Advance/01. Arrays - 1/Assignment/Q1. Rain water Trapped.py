@@ -1,4 +1,4 @@
-""" 
+"""
 Q1. Rain Water Trapped
 Given a vector A of non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
 
@@ -35,28 +35,32 @@ No water is trapped.
 """
 # Idea 1 using recusion This is from the book
 
-def trap(A):
 
+def trap(A):
     # Finds the index with maximum height.
     max_h = A.index(max(A))
 
-    #Assume heights [-1] is maximum hieght.
+    # Assume heights [-1] is maximum hieght.
     def trappingWaterTillEnd(A):
-        partialSum, highestLevelSeen = 0, float('-inf')
+        partialSum, highestLevelSeen = 0, float("-inf")
         for h in A:
-            if h >=  highestLevelSeen:
-                highestLevelSeen = h 
+            if h >= highestLevelSeen:
+                highestLevelSeen = h
             else:
-                partialSum += highestLevelSeen - h 
-        
+                partialSum += highestLevelSeen - h
         return partialSum
-    
-    return (trappingWaterTillEnd(A[:max_h]) + trappingWaterTillEnd(reversed(A[max_h+1:])))
+
+    return trappingWaterTillEnd(A[:max_h]) + trappingWaterTillEnd(
+        reversed(A[max_h + 1 :])
+    )
+
 
 # idea 2 taught in calss.
-    # for a current height check the max height on the left and the right side of the current height.
-    # find out which is the minimum of those two height and minus that with current height. you will get water stored on the current building and store the value in new list caller water.
-    # find the water value for each index in the list building hieght. return the addition of the entire water.
+# for a current height check the max height on the left and the right side of the current height.
+# find out which is the minimum of those two height and minus that with current height. you will get water stored on the current building and store the value in new list caller water.
+# find the water value for each index in the list building hieght. return the addition of the entire water.
+
 
 def water(array):
     return
+
