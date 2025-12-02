@@ -67,7 +67,7 @@ def maximumGap(A):
         else:
             pf_min[i] = pf_min[i - 1]
 
-    # Creation of Maximum_Prefix
+    # Creation of Maximum_Suffix
     pf_max = [0 for i in range(n)]
     pf_max[n - 1] = A[n - 1]
     for i in range(n - 2, -1, -1):
