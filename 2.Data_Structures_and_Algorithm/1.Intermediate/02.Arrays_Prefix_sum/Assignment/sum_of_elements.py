@@ -5,18 +5,18 @@ calculate the sum of elements between start and end index.
 """
 
 
-def sumOfElements(A, startIndex, lastIndex):
+def sumOfElements(A: tuple[int, ...], startIndex: int, lastIndex: int):
     # this variable will store sum of elements.
-    sumOfElements = 0
+    sumOfElements: int = 0
 
-    for i in range(
-        startIndex, lastIndex + 1
-    ):  # going from start index to last index of the array.
-        sumOfElements = (
-            sumOfElements + A[i]
-        )  # extracting the elements of the array one by one and adding it to the sumOfElements variable.
+    # going from start index to last index of the array.
+    for i in range(startIndex, lastIndex + 1):
+        # extracting the elements of the array one by one and adding it to the sumOfElements variable.
+        sumOfElements = sumOfElements + A[i]
 
-    print(sumOfElements)  # Printing the sum.
+    # Printing the sum.
+
+    print(sumOfElements)
 
 
 arr = tuple(map(int, input().split()))  # Accepting the array
@@ -28,9 +28,8 @@ queries = int(input())  # accepting the no. of queries
 while queries > 0:
     queries -= 1  # decreasing the queries count otherwise loop will go for infinte.
 
-    startIndex, lastIndex = map(
-        int, input().split()
-    )  # accepting the start and end Index queries.
+    # accepting the start and end Index queries.
+    startIndex, lastIndex = map(int, input().split())
     sumOfElements(arr, startIndex, lastIndex)
 
 """
