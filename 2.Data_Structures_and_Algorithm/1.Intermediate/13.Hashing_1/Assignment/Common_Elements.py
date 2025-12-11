@@ -38,7 +38,7 @@ Explantion 2:
 """
 
 
-def commonElements(A, B):
+def commonElements(A: list[int], B: list[int]) -> list[int]:
     """this function returns the common elements between two integer arrays.
 
     Args:
@@ -60,10 +60,10 @@ def commonElements(A, B):
     #         res.append(A[i])
 
     # 2nd idea
-    dictionary = {}
-    res = []
-    n1 = len(A)
-    n2 = len(B)
+    dictionary: dict[int, int] = {}
+    res: list[int] = []
+    n1: int = len(A)
+    n2: int = len(B)
 
     for i in range(n2):
         if B[i] in dictionary:
@@ -78,6 +78,6 @@ def commonElements(A, B):
     return res
 
 
-A = [1, 2, 2, 1]
-B = [2, 3, 1, 2]
+A: list[int] = [1, 2, 2, 1]
+B: list[int] = [2, 3, 1, 2]
 print(commonElements(A, B))
